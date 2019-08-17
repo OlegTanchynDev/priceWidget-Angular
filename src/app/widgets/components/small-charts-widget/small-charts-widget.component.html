@@ -1,0 +1,15 @@
+<div class="container-el" [ngStyle]="theme">
+  <div class="content">
+    <div class="row">
+      <div class="col-12 col-md-6 col-lg-4 d-flex flex-column align-items-center">
+        <app-small-chart-widget type="1" [activeCoin]="activeCoinForChart1" [coin]="coinForChart1"></app-small-chart-widget>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4 d-flex flex-column align-items-center">
+        <app-small-chart-widget type="2" [activeCoin]="activeCoinForChart2" [coin]="coinForChart2"></app-small-chart-widget>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4 d-flex flex-column align-items-center">
+        <app-small-chart-widget type="3" [activeCoin]="activeCoinForChart3" [coin]="coinForChart3"></app-small-chart-widget>
+      </div>
+    </div>
+  </div>
+</div>

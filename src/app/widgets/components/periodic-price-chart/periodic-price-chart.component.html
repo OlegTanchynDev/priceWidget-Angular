@@ -1,0 +1,87 @@
+<div #styleContainer></div>
+
+<div class="wrap" [ngStyle]="theme">
+
+  <div *ngIf="loader" class="loader-container">
+    <div class="loading"></div>
+  </div>
+
+  <ng-container *ngIf="!loader">
+
+    <div class="content" *ngIf="widgetData">
+
+      <div class="top_line">
+        <div class="price_wrap">
+          <div class="price">
+            <div class="currency">{{this.coin}}/USD</div>
+            <div class="change {{labelClass}} {{animate}} {{highlightClass}}" (animationend)="clearAnimationClass()">
+              {{(!widgetData.percent)? '—' : widgetData?.percent | rounder | symbolPipe: '%'}}
+            </div>
+          </div>
+          <div class="current_price {{labelClass}} {{animate}} {{highlightClass}}">
+            {{widgetData.price | rounder | symbolPipe: '$': true}}
+            <i class="fa" [ngClass]="triangleClass" aria-hidden="true"></i>
+          </div>
+        </div>
+
+        <div class="next_data">
+          <table>
+            <tr>
+              <th>Today's Open:</th>
+              <td>{{widgetData.price | rounder | symbolPipe: '$': true}}</td>
+              <th>Change:</th>
+              <td class="change {{labelClass}} {{animate}}" (animationend)="clearAnimationClass()">
+                <i class="fa" [ngClass]="triangleClass" aria-hidden="true"></i>
+                <span [ngClass]="highlightClass" [ngClass]="labelClass">{{(!widgetData.change) ?'—' : widgetData?.change | rounder | symbolPipe: '$': true}}</span>
+              </td>
+            </tr>
+            <tr>
+              <th>Today's Height:</th>
+              <td>{{widgetData.maxPrice | rounder | symbolPipe: '$': true}}</td>
+              <th>Market Cap:</th>
+              <td>{{widgetData.marketCap | rounder | symbolPipe: '$': true}}</td>
+            </tr>
+            <tr>
+              <th>Today's Low:</th>
+              <td>{{widgetData.minPrice | rounder | symbolPipe: '$': true}}</td>
+              <th>Supply:</th>
+              <td>{{widgetData.supply | rounder | symbolPipe: '$': true}}</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="chart-wrapper">
+        <app-base-chart class="chart" [type]="'periodic-price-chart'" [data]="chartRenderData"></app-base-chart>
+      </div>
+
+    </div><!-- end .content -->
+
+    <div class="footer">
+      <div class="control_block row">
+        <div class="btn_group col-12 col-md-6 col-lg-6">
+          <button
+            *ngFor="let param of history"
+            (click)="loadingHistory(param)"
+            [ngClass]="{'clicked': activePeriod === param}">
+            {{param.name}}
+          </button>
+        </div>
+        <div class="input_group col-12 col-md-5 col-lg-5">
+          <input type="text" value={{widgetData.dateFrom}} disabled> —
+          <input type="text" value={{widgetData.currentDate}} disabled>
+        </div>
+        <div class="col-12 col-md-1 col-lg-1">
+          <a href="https://einstein.exchange/register" target="_blank" class="link">
+            <img src="./assets/img/widget_logo.png" alt="einstain">
+          </a>
+        </div>
+      </div>
+      <!-- <a href="https://einstein.exchange/register" target="_blank" class="link">
+        <img src="./assets/img/widget_logo.png" alt="einstain">
+      </a> -->
+    </div><!-- end .footer -->
+
+  </ng-container>
+
+</div><!-- end .wrap -->

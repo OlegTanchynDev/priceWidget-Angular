@@ -1,0 +1,142 @@
+/* === {FOOTER AT BOTTOM} === */
+.wrap {
+  display: flex;
+  flex-direction: column;
+  min-height: 400px;
+  border-radius: 10px;
+  box-shadow: 1px 1.7px 5px rgba(0,0,0,0.2);
+  padding: 20px 15px;
+}
+.content {
+  flex: auto;
+}
+/* === {END FOOTER AT BOTTOM} === */
+
+.wrap {
+  /* width: 400px; */
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* === {CONTENT} === */
+.content {
+  display: flex;
+  justify-content: space-between;
+}
+.content .chart {
+  position: relative;
+  width: 218px;
+  height: 124px;
+  background-color: rgba(233,233,233,.3);
+  border: 1px solid #4d4d4d;
+  overflow: hidden;
+}
+.content .link {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  display: block;
+  cursor: pointer;
+  text-decoration: none;
+}
+.content .link img {
+  display: block;
+  max-width: 64px;
+  border: none;
+}
+.content .info {
+  display: flex;
+  flex-direction: column;
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+}
+.content .info .currency {
+  font-size: 26px;
+}
+.content .info .price {
+  display: flex;
+  align-items: center;
+}
+.content .info .change i {
+  margin-right: 5px;
+  visibility: hidden;
+}
+.content .info .change i.down,
+.content .info .current_price.minus,
+.content .info .change.minus,
+.content .info .change .minus {
+  visibility: visible;
+}
+.content .info .change i.up,
+.content .info .current_price.plus,
+.content .info .change.plus,
+.content .info .change .plus {
+  visibility: visible;
+}
+.color-down {
+  color: #da0000;
+}
+.color-up {
+  color: #10a929;
+}
+.content .info .current_price {
+  font-size: 16px;
+}
+.content .info .change {
+  display: flex;
+  align-items: center;
+  margin-left: 12px;
+  font-size: 10px;
+}
+.content .info .change i {
+  font-size: 20px;
+}
+.content .info .points {
+  font-size: 12px;
+}
+.content .info .higher {
+  color: rgb(16,169,41);
+}
+.content .info .lower {
+  color: rgb(210,55,50);
+}
+.content .info .volume {
+  font-size: 11px;
+  font-weight: normal;
+  margin-top: 7px;
+}
+/* === {END CONTENT} === */
+
+/* === {FOOTER} === */
+.footer .converter {
+  width: 100%;
+  font-family: "Open Sans", sans-serif;
+}
+.footer .converter th {
+  text-align: left;
+  font-size: 14px;
+  padding-bottom: 10px;
+}
+.footer .converter td {
+  font-size: 12px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+.footer .converter td:first-of-type {
+  font-size: 12px;
+  color: rgb(77,75,237);
+  font-weight: bold;
+}
+/* === {END FOOTER} === */
+
+/* === {CHART CUSTOMIZE} === */
+app-base-chart /deep/ #pricing-index {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+/* === {END CHART CUSTOMIZE} === */

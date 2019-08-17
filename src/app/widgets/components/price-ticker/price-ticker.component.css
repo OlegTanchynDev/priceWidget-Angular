@@ -1,0 +1,116 @@
+/* === {FOOTER AT BOTTOM} === */
+.wrap {
+  display: flex;
+  flex-direction: column;
+  height: 240px;
+  border-radius: 10px;
+  box-shadow: 1px 1.7px 5px rgba(0,0,0,0.2);
+}
+.content {
+  flex: auto;
+}
+/* === {END FOOTER AT BOTTOM} === */
+
+.wrap {
+  min-width: 290px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* === {CONTENT} === */
+.content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  z-index: 10;
+}
+.content .top {
+  font-size: 12px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.content .top .date {
+  font-weight: normal;
+}
+/* === {END CONTENT} === */
+
+/* === {FOOTER} === */
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 56px;
+  padding: 8px 20px;
+  box-sizing: border-box;
+  background-color: rgba(203,203,203,.3);
+}
+.footer .left {
+  display: flex;
+  flex-direction: column;
+}
+.footer .left .currency {
+  font-size: 20px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+  line-height: 18px;
+}
+.footer .left .current_price {
+  font-size: 22px;
+  color: rgb(77,75,237);
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+  line-height: 22px;
+}
+
+.footer .right {
+  display: flex;
+  flex-direction: column;
+}
+.footer .right .prices {
+  font-size: 12px;
+  line-height: 12px;
+  font-family: "Open Sans", sans-serif;
+}
+.footer .link {
+  margin-top: 7px;
+  align-self: flex-end;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  text-decoration: none;
+}
+.footer .link img {
+  display: block;
+  max-width: 64px;
+  border: none;
+}
+/* === {END FOOTER} === */
+
+/* === {CHART CUSTOMIZE} === */
+app-base-chart /deep/ #price-ticker {
+  height: 150px;
+}
+app-base-chart /deep/ #price-ticker circle {
+  fill: none !important;
+  stroke: none !important;
+  stroke-width: 1px !important;
+}
+app-base-chart /deep/ #price-ticker g:first-of-type > g:nth-of-type(2) > g > circle:first-of-type,
+app-base-chart /deep/ #price-ticker g:nth-of-type(2) > g:nth-of-type(2) > g > circle:first-of-type {
+  stroke-width: 1px !important;
+  stroke: none !important;
+}
+app-base-chart /deep/ #price-ticker g:first-of-type > g:nth-of-type(2) > g > circle:first-of-type,
+app-base-chart /deep/ #price-ticker g:nth-of-type(2) > g:nth-of-type(2) > g > circle:first-of-type {
+  fill: #fff!important;
+}
+app-base-chart /deep/ #price-ticker g:first-of-type > g:nth-of-type(2) > g > path,
+app-base-chart /deep/ #price-ticker g:nth-of-type(2) > g:nth-of-type(2) > g > path {
+  stroke-dasharray: 6;
+}
+/* === {END CHART CUSTOMIZE} === */

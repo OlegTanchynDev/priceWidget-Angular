@@ -1,0 +1,602 @@
+<div class="banner col-sm-12">
+
+  <div class="container">
+
+    <div class="row">
+
+      <div class="width-full col-12 d-flex flex-column justify-content-center align-items-center">
+
+        <h1 class="title">Free Webmaster Tools.<br>
+          Our 12 awesome customizable HTML5 widgets that embed just in seconds
+        </h1>
+        <button class="scroll-btn" [appScrollTo]="widgets">
+          <i class="fa fa-angle-double-down fa-3x" aria-hidden="true"></i>
+        </button>
+
+      </div>
+
+    </div><!-- end .row -->
+
+  </div><!-- end .container -->
+
+</div><!-- end .banner -->
+
+
+<div #widgets class="bitcoin-price-chart">
+
+  <div class="container">
+
+    <div class="row">
+
+      <div class="col-12 col-md-6">
+        <div class="content">
+          <h2 class="title"> Bitcoin Price Chart Widget</h2>
+          <div class="text">
+            <p>Bitcoin Price Chart Widget is an advanced tool that displays rating based on technical indicators. Our
+              beautifully designed gauge lets you see the summary based on all indicators at a quick glance. <br><br>You
+              no
+              longer have to apply multiple indicators to analyze a financial instrument since our widget does it
+              for you.On top of that, all ratings are shown in real time.</p>
+          </div>
+          <button  type="button" (click)="getScrollPos()"  class="btn" [routerLink]="['edit/bitcoin-price-chart']">Get Widget</button>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6">
+        <div class="widget">
+          <bitcoin-price-chart></bitcoin-price-chart>
+        </div>
+      </div>
+
+    </div><!-- end .row -->
+
+  </div><!-- end .container -->
+
+</div><!-- end .bitcoin-price-chart -->
+
+
+<div class="simple-bitcoin-price">
+
+  <div class="container">
+
+    <div class="row">
+
+      <div class="col-12 col-md-6">
+        <div class="widgets">
+          <div class="top">
+            <simple-bitcoin-price></simple-bitcoin-price>
+          </div>
+
+          <div class="bot">
+            <simple-bitcoin-price [tagTheme]="'white'"></simple-bitcoin-price>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6">
+        <h2 class="title"> Simple Bitcoin Price Widget</h2>
+        <div class="content">
+          <p>
+            Simple Bitcoin Price Widget is an advanced tool that displays rating based on technical indicators. Our
+            beautifully designed gauge lets you see the summary based on all indicators at a quick glance. <br><br>You
+            no longer have to apply multiple indicators to analyze a financial instrument since our widget does it
+            for you. On top of that, all ratings are shown in real time.
+          </p>
+          <button  type="button" (click)="getScrollPos()"  class="btn" [routerLink]="['edit/simple-bitcoin-price']">Get Widget</button>
+        </div>
+      </div>
+
+    </div><!-- end .row -->
+
+  </div><!-- end .container -->
+
+</div><!-- end .simple-bitcoin-price -->
+
+
+<div class="periodic-price-chart">
+
+  <div class="container">
+
+    <div class="row">
+
+      <div class="col-12">
+        <h2 class="title">Periodic Price Chart Widget</h2>
+
+        <div class="widget">
+          <app-periodic-price style="max-width: 100%"></app-periodic-price>
+        </div>
+
+        <div class="content">
+          <p>
+            Periodic Price Chart Widget is a free and powerful charting solution that easily embeds into any website.
+            Simply adjust the settings and click Apply to see a preview, then copy the embed code and paste it into
+            your
+            site code. You can personalize the chart by modifying the default symbol, watchlist, adding tools for
+            technical analysis and a lot more. You can even add news, hotlists, or an economic calendar to make the
+            widget into an entire analytics platform.
+          </p>
+          <button  type="button" (click)="getScrollPos()"  [routerLink]="['edit/periodic-price-chart']" class="btn">Get Widget</button>
+        </div>
+
+      </div>
+
+    </div><!-- end .row -->
+
+  </div><!-- end .container -->
+
+</div><!-- end .periodic-price-chart -->
+
+
+<div class="price-ticker">
+
+  <div class="container">
+
+    <div class="row">
+
+      <div class="col-12 col-md-6">
+        <h2 class="title">Price Ticker Widget</h2>
+        <div class="content">
+          <p>
+            Bitcoin Price Chart Widget is an advanced tool that displays ratings based on technical indicators. Our
+            beautifully designed gauge lets you see the summary based on all indicators at a quick glance.<br><br>
+            You no longer have to apply multiple indicators to analyze a financial instrument since our widget does
+            that
+            for you. On top of that, all ratings are shown in real time.
+          </p>
+          <button type="button" (click)="getScrollPos()"   [routerLink]="['edit/price-ticker']" class="btn">Get Widget</button>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6">
+        <div class="widget">
+          <app-price-ticker></app-price-ticker>
+        </div>
+      </div>
+
+    </div><!-- end .row -->
+
+  </div><!-- end .container -->
+
+</div><!-- end .price-ticker -->
+
+
+<div class="three-widgets">
+
+  <div class="container">
+
+    <div class="row">
+
+      <div class="col-12 col-md-6 col-lg-4 d-flex flex-column align-items-center">
+        <div class="widget">
+          <app-bitcoin-price-widget></app-bitcoin-price-widget>
+        </div>
+        <h2 class="title"> Bitcoin Chart Widget</h2>
+        <div class="content">
+          <p>Bitcoin Chart Widget is an advanced tool that displays rating based on technical
+            indicators</p>
+        </div>
+        <button  type="button" (click)="getScrollPos()"  [routerLink]="['edit/bitcoin-price-widget']" class="center-btn btn">Get Widget</button>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-4 d-flex flex-column align-items-center">
+        <div class="widget">
+          <app-altcoin-price-lists-widget></app-altcoin-price-lists-widget>
+        </div>
+        <h2 class="title">Altcoin Price Lists Widget</h2>
+        <div class="content">
+          <p>Altcoin Price Lists Widget is an advanced tool that displays rating based on technical
+            indicators</p>
+        </div>
+        <button  type="button" (click)="getScrollPos()"  [routerLink]="['edit/altcoin-price-lists-widget']" class="center-btn btn">Get Widget
+        </button>
+      </div>
+
+      <div class="col-12 col-lg-4 d-flex flex-column align-items-center">
+        <div class="widget">
+          <app-altcoin-price-widget style="min-width: 300px"></app-altcoin-price-widget>
+        </div>
+        <h2 class="title">Altcoin Chart Widget</h2>
+        <div class="content">
+          <p>Altcoin Chart Widget is an advanced tool that displays rating based on technical
+            indicators</p>
+        </div>
+        <button  type="button" (click)="getScrollPos()"  [routerLink]="['edit/altcoin-price-widget']" class="center-btn btn">Get Widget</button>
+      </div>
+
+    </div><!-- end .row -->
+
+  </div><!-- end .container -->
+
+</div><!-- end .three-widgets -->
+
+<div class="three-widgets">
+
+  <div class="container">
+
+    <div class="row">
+      <app-small-charts-widget></app-small-charts-widget>
+
+      <div class="content">
+        <button type="button" (click)="getScrollPos()" [routerLink]="['edit/small-charts-widget']" class="btn">Get
+          Widget</button>
+      </div>
+        <!-- <div class="col-12 col-md-6 col-lg-4 d-flex flex-column align-items-center">
+          <div class="widget" style="width: 100%;">
+            <app-small-chart-widget type="1"></app-small-chart-widget>
+          </div>
+        </div>
+    
+        <div class="col-12 col-md-6 col-lg-4 d-flex flex-column align-items-center">
+          <div class="widget" style="width: 100%;">
+            <app-small-chart-widget type="2"></app-small-chart-widget>
+          </div>
+        </div>
+    
+        <div class="col-12 col-lg-4 d-flex flex-column align-items-center">
+          <div class="widget" style="width: 100%;">
+            <app-small-chart-widget type="3"></app-small-chart-widget>
+          </div>
+        </div> -->
+        <!-- end .-->
+    
+    </div><!-- end . -->
+
+</div><!-- end  -->
+
+<div class="animated-market">
+
+  <div class="container">
+
+    <div class="row">
+
+      <div class="col-12 d-flex flex-column align-items-center">
+        <div class="d-flex flex-column align-items-center">
+          <h2 class="title">Animated Market Ticker Widget</h2>
+        </div>
+        <div class="wrapper">
+          <div class="widget">
+            <app-animated-market-ticker-widget style="max-width: 100%"></app-animated-market-ticker-widget>
+          </div>
+          <div class="content">
+            <p>Animated Market Ticker Widget is an advanced tool that displays rating based on technical
+              indicators. Our beautifully designed gauge lets you see the summary based on all indicators at a quick
+              glance</p>
+            <button  type="button" (click)="getScrollPos()"  [routerLink]="['edit/animated-market-ticker-widget']" class="btn">Get Widget</button>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end .row -->
+
+  </div><!-- end .container -->
+
+</div><!-- end .animated-market -->
+
+<div class="pricing-index">
+
+  <div class="container">
+
+    <div class="row">
+
+      <div class="col-12 col-md-6">
+        <h2 class="title">Pricing Index Widget</h2>
+        <div class="content">
+          <p>
+            Pricing Index Widget is an advanced tool that displays rating based on technical indicators.
+            Our beautifully designed gauge lets you see the summary based on all indicators at a quick glance.<br><br>
+            You no longer have to apply multiple indicators to analyze a financial instrument since our widget does it
+            for you. On top of that, all ratings are shown in real time.
+          </p>
+          <button  type="button" (click)="getScrollPos()"  [routerLink]="['edit/pricing-index']" class="btn">Get Widget</button>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6">
+        <div class="widget">
+          <app-pricing-index style="max-width: 100%;"></app-pricing-index>
+        </div>
+      </div>
+
+    </div><!-- end .row -->
+
+  </div><!-- end .container -->
+
+</div><!-- end .pricing-index -->
+
+
+<div class="ticker-widget">
+
+  <div class="container">
+
+    <div class="row">
+
+      <div class="col-12 d-flex flex-column align-items-center">
+        <h2 class="title">Ticker Widget</h2>
+      </div>
+
+      <div class="col-12 d-flex flex-column align-items-center">
+        <div class="widget">
+          <app-ticker-widget style="max-width: 100%"></app-ticker-widget>
+        </div>
+
+        <div class="content">
+          <p>Ticker Widget is an advanced tool that displays rating based on technical indicators.
+            Our beautifully designed gauge lets you see the summary based on all indicators at a quick glance</p>
+          <button  type="button" (click)="getScrollPos()"  [routerLink]="['edit/ticker-widget']" class="btn">Get Widget</button>
+        </div>
+
+      </div>
+
+    </div><!-- end .row -->
+
+  </div><!-- end .container -->
+
+</div><!-- end .ticker-widget -->
+
+<div class="single-ticker">
+
+  <div class="container">
+
+    <div class="row">
+
+      <div class="col-12 col-md-6">
+        <div class="widget">
+          <app-single-ticker [tagTheme]="'white'" [tagCoin]="'LTC'"></app-single-ticker>
+          <app-single-ticker></app-single-ticker>
+          <app-single-ticker [tagTheme]="'white'" [tagCoin]="'XRP'"></app-single-ticker>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6">
+        <h2 class="title">Single Ticker Widget</h2>
+        <div class="content">
+          <p>Single Ticker Widget is an advanced tool that displays rating based on technical indicators.
+            Our beautifully designed gauge lets you see the summary based on all indicators at a quick glance.
+            You no longer have to apply multiple indicators to analyze a financial instrument since our widget does it
+            for
+            you.
+            On top of that, all ratings are shown in real time.</p>
+            <button [routerLink]="['edit/single-ticker']"  type="button" (click)="getScrollPos()"  class="btn">Get Widget</button>
+        </div>
+      </div>
+
+    </div><!-- end .row -->
+
+  </div><!-- end .container -->
+
+</div><!-- end .single-ticker -->
+
+
+<div class="cryptocurrency-market">
+
+  <div class="container">
+
+    <div class="row">
+
+      <div class="col-12">
+        <h2 class="title">Cryptocurrency Market Widget</h2>
+      </div>
+
+      <div class="col-12">
+        <div class="widget">
+          <app-cryptocurrency-market style="overflow: auto"></app-cryptocurrency-market>
+        </div>
+      </div>
+
+      <div class="col-12">
+        <div class="content">
+          <p>Cryptocurrency Market Widget is a free and powerful charting solution that easily embeds
+            into
+            any website.
+            Simply adjust the settings and click Apply to see a preview, then copy the embed code and paste it into
+            your
+            site
+            code.
+            You can personalize the chart by modifying the default symbol, watchlist, adding tools for technical
+            analysis
+            and
+            a lot more.
+            You can even add news, hotlists, or an economic calendar to make the widget into an entire analytics
+            platform.
+          </p>
+          <button  type="button" (click)="getScrollPos()"  [routerLink]="['edit/cryptocurrency-market']" class="btn">Get Widget
+          </button>
+        </div>
+      </div>
+
+    </div><!-- end .row -->
+
+  </div><!-- end .container -->
+
+</div><!-- end .cryptocurrency-market -->
+
+<div class="square-widget">
+
+  <div class="container">
+
+    <div class="row">
+
+      <div class="col-12 col-md-12 col-lg-6">
+        <h2 class="title">Square widget</h2>
+        <div class="content">
+          <p>Square widgets display live quotes (Name, Price, 24h Change…)
+            of an individual cryptocurrency (Bitcoin, Ether, Litecoin…).
+            You can custom color, border, shape, background for each boxes.
+          </p>
+          <button  type="button" (click)="getScrollPos()"  [routerLink]="['edit/square-widget']" class="btn">Get Widget
+          </button>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-12 col-lg-6">
+        <div class="widget">
+          <app-square-widget></app-square-widget>
+        </div>
+      </div>
+
+    </div><!-- end .row -->
+
+  </div><!-- end .container -->
+
+</div><!-- end .square-widget -->
+
+<div class="small-chart">
+
+  <div class="container">
+
+    <div class="row">
+
+      <div class="col-12 col-md-12 col-lg-6">
+        <div class="widget">
+          <app-small-chart></app-small-chart>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-12 col-lg-6">
+        <h2 class="title">Small chart widget</h2>
+        <div class="content">
+          <p>
+            Spark Charts widgets display Name, Price, 24h Change and Small Chart along with
+            real-time performance of a cryptocurrency data. You can custom color, style, border,
+            shadow… for each widgets
+          </p>
+          <button  type="button" (click)="getScrollPos()"  [routerLink]="['edit/small-chart']" class="btn">Get Widget
+          </button>
+        </div>
+      </div>
+
+    </div><!-- end .row -->
+
+  </div><!-- end .container -->
+
+</div><!-- end .small-chart -->
+
+<div class="comparison-widget">
+
+  <div class="container">
+
+    <div class="row">
+
+      <div class="col-12">
+        <div class="d-flex flex-column align-items-center">
+          <h2 class="title">Comparison Widget</h2>
+          <div class="content">
+            <p>
+              Comparison widgets makes it easier to compare (Price, Change…) between cryptocurrencies,
+              It’s good on all devices (PC, Tablet, Mobile…). You can custom color, border, background…
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 widget-content">
+        <div class="widget">
+          <app-comparison-widget></app-comparison-widget>
+        </div>
+        <button  type="button" (click)="getScrollPos()"  [routerLink]="['edit/comparison-widget']" class="btn">Get Widget
+        </button>
+      </div>
+
+    </div><!-- end .row -->
+
+  </div><!-- end .container -->
+
+</div><!-- end .comparioson-widget -->
+
+<div class="leaderboards">
+
+  <div class="container">
+
+    <div class="row">
+
+      <div class="col-12">
+        <div class="d-flex flex-column align-items-center">
+          <h2 class="title">Leaderboards widget</h2>
+          <div class="content">
+            <p>
+              Leaderboards widgets show more fields (Name, Price, Supply, Volume, Market Cap, 24h Change…)
+              individual cryptocurrency as wide blocks. You custom color, border, background…
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12">
+        <div class="widget">
+          <app-leaderboards></app-leaderboards>
+        </div>
+        <div class="widget-content">
+          <button  type="button" (click)="getScrollPos()"  [routerLink]="['edit/leaderboards']" class="btn">Get Widget
+          </button>
+        </div>
+      </div>
+
+    </div><!-- end .row -->
+
+  </div><!-- end .container -->
+
+</div><!-- end .leaderboards -->
+
+<div class="line-widgets">
+
+  <div class="container">
+
+    <div class="row">
+
+      <div class="col-sm-12 col-md-12 col-lg-6">
+        <h2 class="title">Line widgets</h2>
+        <div class="content">
+          <p>
+            Inline widgets display cryptocurrency quotes as text paragraphs in your article or post,
+            visitors can see their live prices. You can choose field (Logo, Name, Price…) data of
+            coin to display for each widget.
+          </p>
+          <button  type="button" (click)="getScrollPos()"  [routerLink]="['edit/line-widget']" class="btn">Get Widget
+          </button>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-12 col-lg-6">
+        <div class="widget">
+          <app-line-widget></app-line-widget>
+        </div>
+      </div>
+
+    </div><!-- end .row -->
+
+  </div><!-- end .container -->
+
+</div><!-- end .line-widgets -->
+
+<div class="crypto-calculation">
+
+  <div class="container">
+
+    <div class="row">
+
+      <div class="col-12">
+        <div class="d-flex flex-column align-items-center">
+          <h2 class="title">Crypto calculation widget</h2>
+          <div class="content">
+            <p>
+              Calculator widgets calculate coins prices. 2000+ coins and 200+currencies are supported. You custom
+              color, border, background, shape…
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 widget-content">
+        <div class="widget">
+          <app-crypto-calculation></app-crypto-calculation>
+        </div>
+        <div class="btn-widget">
+          <button  type="button" (click)="getScrollPos()"  [routerLink]="['edit/crypto-calculation']" class="btn">Get Widget
+          </button>
+        </div>
+      </div>
+
+    </div><!-- end .row -->
+
+  </div><!-- end .container -->
+
+</div><!-- end .crypto-calculation -->

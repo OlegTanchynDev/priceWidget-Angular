@@ -1,0 +1,48 @@
+<div class="container" [ngStyle]="theme">
+
+  <div *ngIf="loader" class="loader-container">
+    <div class="loading"></div>
+  </div>
+
+  <ng-container *ngIf="!loader">
+    <div class="inputs-content">
+      <div class="ratio col-12 col-sm-5 col-md-5 col-lg-5">
+        <!--  -->
+        <input type="text" class="left" [(ngModel)]="valueFrom" (ngModelChange)="onChangeFrom()">
+        <div class="select-wrapper">
+          <label for="currency" class="custom-select left">
+            <select name="" id="currency" class="left" [(ngModel)]="tempCurrency" (ngModelChange)="updateCurrencyData()">
+              <option *ngFor="let currency of currencyList; let i = index" [value]="currency">
+                {{ currency | uppercase }}
+              </option>
+            </select>
+          </label>
+        </div>
+
+      </div>
+      <div class="favicons col-offset-3 col-6 col-sm-2 col-md-2">
+        <i class="fa fa-long-arrow-right fa-2x center-element sm-none" aria-hidden="true"></i>
+        <i class="fa fa-repeat fa-2x center-element" aria-hidden="true" (click)="reorderFn()"></i>
+      </div>
+      <div class="currencies col-12 col-sm-5 col-md-5 col-lg-5">
+        <input type="text" class="right" [(ngModel)]="valueTo" (ngModelChange)="onChangeTo()">
+        <div class="select-wrapper">
+          <label for="item-cr" class="custom-select right">
+            <select id="item-cr" class="right" name="" size="1" [(ngModel)]="coin" (ngModelChange)="updateCurrencyData()">
+              <option *ngFor="let coin of coinsData; let i = index" [value]="coin.symbol">
+                {{ coin.symbol | uppercase }}
+              </option>
+            </select>
+          </label>
+
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <a href="https://einstein.exchange/">
+        <img src="./assets/img/widget_circle_logo.png" alt="">
+        <img class="logo-text" src="./assets/img/widget_logo.png" alt="" srcset="">
+      </a>
+    </div>
+  </ng-container>
+</div>

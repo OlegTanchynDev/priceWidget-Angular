@@ -1,0 +1,26 @@
+<div class="wrap" [ngStyle]="theme">
+
+  <div *ngIf="loader" class="loader-container">
+    <div class="loading"></div>
+  </div>
+
+  <ng-container *ngIf="!loader">
+
+    <div *ngIf="price" class="content">
+      <div class="price" [ngClass]="animate" (animationend)="clearAnimationClass()">
+        <div class="num">{{price | rounder | symbolPipe: '$': true}}</div>
+        <i class="fa" [ngClass]="triangleClass" aria-hidden="true"></i>
+      </div>
+      <div class="currency">{{coin}}/USD</div>
+    </div><!-- end .content -->
+
+    <div class="footer">
+      <a href="https://einstein.exchange/register" target="_blank" class="link">
+        <div class="char"></div>
+        <img src="./assets/img/widget_logo.png" alt="einstain">
+      </a>
+    </div><!-- end .footer -->
+
+  </ng-container>
+
+</div><!-- end .wrap -->

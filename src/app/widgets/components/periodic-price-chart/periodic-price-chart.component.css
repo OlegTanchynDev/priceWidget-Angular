@@ -1,0 +1,240 @@
+/* === {FOOTER AT BOTTOM} === */
+.wrap {
+  display: flex;
+  flex-direction: column;
+  height: 530px;
+  border-radius: 10px;
+  box-shadow: 1px 1.7px 5px rgba(0,0,0,0.2);
+}
+.content {
+  flex: auto;
+}
+/* === {END FOOTER AT BOTTOM} === */
+
+.wrap {
+  /* width: 880px; */
+  box-sizing: border-box;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.chart-wrapper {
+  max-width: 100%;
+}
+
+.color-down{
+  color: #da0000;
+}
+.color-up{
+  color: #10a929;
+}
+
+/* === {CONTENT} === */
+.content .top_line {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 100px;
+  padding: 8px 12px 5px 46px;
+  background-color: rgba(223,223,223,.5);
+  overflow-x: auto;
+}
+.content .top_line .price_wrap {
+  flex: none;
+  display: flex;
+  flex-direction: column;
+}
+.content .top_line .price_wrap .price {
+  display: flex;
+  align-items: flex-start;
+}
+.content .top_line .price_wrap .price .currency {
+  color: rgb(40,40,41);
+  font-size: 36px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+  text-align: center;
+  line-height: 39px;
+}
+.content .top_line .price_wrap .price .change {
+  font-size: 20px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+  margin-left: 10px;
+}
+.content .top_line .price_wrap .current_price {
+  font-size: 32px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+}
+
+.content i {
+  visibility: hidden;
+}
+.content i.down,
+.content .current_price.minus,
+.content .change.minus,
+.content .minus {
+  /* color: #da0000; */
+  visibility: visible;
+}
+.content i.up,
+.content .current_price.plus,
+.content .change.plus,
+.content .plus {
+  /* color: #7dd608; */
+  visibility: visible;
+}
+
+.content .top_line .next_data {
+  flex: none;
+}
+.content .top_line .next_data table {}
+.content .top_line .next_data table tr:nth-of-type(n+2) th,
+.content .top_line .next_data table tr:nth-of-type(n+2) td {
+  padding-top: 10px;
+}
+.content .top_line .next_data table th:nth-of-type(n+2) {
+  padding-left: 13px;
+}
+.content .top_line .next_data table td:first-of-type {
+  padding-right: 44px;
+}
+.content .top_line .next_data table th {
+  font-size: 16px;
+  line-height: 16px;
+  color: rgb(40,40,41);
+  font-family: "Open Sans", sans-serif;
+  font-weight: normal;
+  text-align: left;
+  width: 125px;
+  box-sizing: border-box;
+}
+.content .top_line .next_data table td {
+  font-size: 16px;
+  line-height: 16px;
+  color: rgb(40,40,41);
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+  text-align: right;
+  width: 85px;
+  box-sizing: border-box;
+}
+.content .top_line .next_data table td.change i {
+  margin-right: 5px;
+}
+/* === {END CONTENT} === */
+
+/* === {FOOTER} === */
+.footer {
+  display: flex;
+  align-items: center;
+  /* justify-content: flex-end; */
+  padding: 18px 20px;
+  box-sizing: border-box;
+  background-color: rgba(223,223,223,.2);
+}
+.footer .control_block {
+  display: flex;
+  align-items: center;
+  max-width: 100%;
+}
+.footer .control_block .btn_group {
+  display: flex;
+  align-items: center;
+  /* margin-right: 40px; */
+  /* overflow-x: auto; */
+}
+.footer .control_block .btn_group button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 34px;
+  height: 22px;
+  font-size: 12px;
+  color: rgb(40,40,41);
+  font-family: "Open Sans", sans-serif;
+  text-align: center;
+  border: none;
+  background-color: #dfdfdf;
+  outline: none;
+  cursor: pointer;
+}
+.footer .control_block .btn_group button:first-of-type {
+  border-radius: 5px 0 0 5px;
+}
+.footer .control_block .btn_group button:nth-of-type(n+1) {
+  margin-left: 1px;
+}
+.footer .control_block .btn_group button:last-of-type {
+  border-radius: 0 5px 5px 0;
+}
+.footer .control_block .btn_group button.clicked {
+  color: #ffffff;
+  background-color: #4d4d4e;
+}
+.footer .control_block .input_group {
+  /* margin-right: 80px; */
+}
+.footer .control_block .input_group input[type=text] {
+  width: 84px;
+  border-radius: 5px;
+  background-color: #ffffff;
+  border: 1px solid #b8b8b8;
+  font-size: 12px;
+  color: rgb(40,40,41);
+  font-family: "Open Sans", sans-serif;
+  text-align: center;
+}
+.footer .link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  text-decoration: none;
+}
+.footer .link .char {
+  opacity: .7;
+  font-size: 14px;
+  color: rgb(243,243,243);
+  font-family: "Open Sans", sans-serif;
+}
+.footer .link img {
+  display: block;
+  max-width: 64px;
+  border: none;
+}
+/* === {END FOOTER} === */
+
+app-base-chart /deep/ #periodic-price-chart {
+  height: 355px;
+}
+app-base-chart /deep/ #periodic-price-chart circle {
+  fill: none !important;
+  stroke: none !important;
+  stroke-width: 1px !important;
+}
+app-base-chart /deep/ #periodic-price-chart g:first-of-type > g:nth-of-type(2) g > circle:first-of-type,
+app-base-chart /deep/ #periodic-price-chart g:nth-of-type(2) > g:nth-of-type(2) g > circle:first-of-type {
+  stroke-width: 1px !important;
+  stroke: none !important;
+}
+app-base-chart /deep/ #periodic-price-chart g:first-of-type > g:nth-of-type(2) g > circle:first-of-type,
+app-base-chart /deep/ #periodic-price-chart g:nth-of-type(2) > g:nth-of-type(2) g > circle:first-of-type {
+  fill: #fff!important;
+}
+app-base-chart /deep/ #periodic-price-chart g:first-of-type > g:nth-of-type(2) g > path,
+app-base-chart /deep/ #periodic-price-chart g:nth-of-type(2) > g:nth-of-type(2) g > path {
+  stroke-dasharray: 10;
+}
+
+@media (max-width: 767px) {
+  .footer .control_block .btn_group {
+    overflow-x: auto;
+  }
+
+  .footer .control_block .input_group {
+    margin: 7px 0;
+    text-align: center;
+  }
+}

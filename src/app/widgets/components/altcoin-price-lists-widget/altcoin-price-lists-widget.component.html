@@ -1,0 +1,49 @@
+<div class="wrap" [ngStyle]="theme">
+
+  <div *ngIf="loader" class="loader-container">
+    <div class="loading"></div>
+  </div>
+
+  <ng-container *ngIf="!loader">
+
+    <div *ngIf="widgetData" class="content">
+
+      <ng-container *ngFor="let coin of widgetData">
+        <div class="box">
+          <div class="top_line">
+            <div class="price_wrap">
+              <div class="currency">{{coin.name}}({{activePeriod.name}})</div>
+              <div class="price" [ngClass]="coin.animate" (animationend)="clearAnimationClass(coin.coin)">
+                {{coin.price | rounder | symbolPipe: '$': true}}
+              </div>
+            </div>
+            <div class="price-in-btc">
+              {{coin.btc | rounder: 7 | symbolPipe: ' BTC'}}
+            </div>
+          </div>
+          <div class="change {{coin.animate}} {{coin.highlightClass}}" (animationend)="clearAnimationClass(coin.coin)">
+            <i class="fa" [ngClass]="coin.triangleClass" aria-hidden="true"></i>
+            <span>{{coin.percent | rounder | symbolPipe: '%'}}</span>
+          </div>
+        </div><!-- end .box -->
+      </ng-container>
+
+    </div><!-- end .content -->
+
+    <div class="footer">
+      <div class="btn_group">
+        <button
+          *ngFor="let param of history"
+          (click)="changePeriod(param)"
+          [ngClass]="{'clicked': activePeriod === param}">
+          {{param.name}}
+        </button>
+      </div>
+      <a href="https://einstein.exchange/register" target="_blank" class="link">
+        <img src="./assets/img/widget_logo.png" alt="einstain">
+      </a>
+    </div><!-- end .footer -->
+
+  </ng-container>
+
+</div><!-- end .wrap -->

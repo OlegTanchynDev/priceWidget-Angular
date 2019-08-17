@@ -1,0 +1,170 @@
+/* === {FOOTER AT BOTTOM} === */
+.wrap {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border-radius: 10px;
+  box-shadow: 1px 1.7px 5px rgba(0,0,0,0.2);
+}
+.content {
+  flex: auto;
+}
+/* === {END FOOTER AT BOTTOM} === */
+
+.wrap {
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* === {CONTENT} === */
+.content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  z-index: 10;
+}
+.top_line {
+  display: flex;
+  width: 100%;
+  padding: 12px 20px 9px 0.2em;
+  background-color: rgba(243,243,243,.15);
+  box-shadow: 3px 4px 7px rgba(0,0,0,.1);
+  box-sizing: border-box;
+}
+.top_line .price_wrap {
+  min-width: 110px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: "Open Sans", sans-serif;
+  flex: 1 0 auto;
+  padding-right: 0.3em;
+}
+.top_line .currency {
+  font-size: 14px;
+  line-height: 14px;
+}
+.top_line .next_data {
+  flex: 1 0 auto;
+  display: flex;
+}
+.top_line .next_data .column {
+  padding: 0 0.2em;
+}
+.top_line .next_data .column .hd {
+  font-size: 16px;
+  font-family: "Open Sans", sans-serif;
+  text-align: center;
+}
+.top_line .next_data .column .num {
+  font-size: 14px;
+  font-weight: bold;
+  font-family: "Open Sans", sans-serif;
+  text-align: center;
+  line-height: 27px;
+}
+.bot_line {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 10px;
+  padding: 12px 20px 0;
+  background-color: rgba(243,243,243,.15);
+  box-sizing: border-box;
+}
+.bot_line .change {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  font-size: 14px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+  text-align: center;
+  margin-right: 20px;
+}
+.bot_line .change .change_data span {
+  display: inline-block;
+}
+.bot_line .change i {
+  font-size: 1.5em;
+  margin-right: 10px;
+  visibility: hidden;
+}
+.bot_line .change i.down {
+  color: #da0000;
+  visibility: visible;
+}
+.bot_line .change i.up {
+  color: #7dd608;
+  visibility: visible;
+}
+.bot_line .date {
+  font-size: 14px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+  text-align: center;
+  flex: none;
+}
+/* === {END CONTENT} === */
+
+/* === {FOOTER} === */
+.footer {
+  min-height: 37px;
+  padding: 8px 20px;
+  box-sizing: border-box;
+}
+.footer .link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  text-decoration: none;
+}
+.footer .link .char {
+  opacity: .7;
+  font-size: 14px;
+  color: rgb(243,243,243);
+  font-family: "Open Sans", sans-serif;
+}
+.footer .link img {
+  display: block;
+  max-width: 64px;
+  border: none;
+}
+/* === {END FOOTER} === */
+
+/* === {CHART CUSTOMIZE} === */
+app-base-chart /deep/ {
+  position: relative;
+  flex: auto;
+  box-sizing: border-box;
+  box-shadow: 2.5px 4.33px 7px rgba(0,0,0,.1);
+  background-color: rgba(243,243,243,.15);
+  z-index: 10;
+}
+app-base-chart /deep/ #bitcoin-price-chart {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(100% - 20px);
+  height: calc(100% - 20px);
+}
+app-base-chart /deep/ #bitcoin-price-chart circle {
+  fill: none !important;
+  stroke: none !important;
+  stroke-width: 2px !important;
+}
+app-base-chart /deep/ #bitcoin-price-chart circle + g > circle:first-of-type {
+  stroke-width: 2px !important;
+  stroke: none !important;
+}
+/* === {END CHART CUSTOMIZE} === */
+
+@media (max-width: 767px) {
+  .wrap {
+    height: 400px;
+  }
+}

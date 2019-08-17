@@ -1,0 +1,47 @@
+<div #styleContainer></div>
+
+<div class="wrap" [ngStyle]="theme">
+
+  <div *ngIf="loader" class="loader-container">
+    <div class="loading"></div>
+  </div>
+
+  <ng-container *ngIf="!loader">
+
+    <div class="content" *ngIf="widgetData">
+
+      <div class="top">
+        {{price | rounder | symbolPipe: '$': true}}
+        <span class="date">({{date | ago}})</span>
+      </div>
+
+      <app-base-chart class="chart" [type]="'price-ticker'" [data]="chartRenderData" (mouseOver)="mouseOver($event)"
+                      (mouseOut)="mouseOut($event)"></app-base-chart>
+
+    </div><!-- end .content -->
+
+    <div class="footer">
+
+      <div class="left">
+        <div class="currency">{{coin}}/USD</div>
+        <div class="current_price">{{widgetData.price | rounder | symbolPipe: '$': true}}</div>
+      </div>
+
+      <div class="right">
+        <div class="prices">
+          H: {{widgetData.maxPrice | rounder | symbolPipe: '$': true}}
+          &nbsp;&nbsp;
+          L: {{widgetData.minPrice | rounder | symbolPipe: '$': true}}
+        </div>
+        <a href="https://einstein.exchange/register" target="_blank" class="link">
+          <img src="./assets/img/widget_logo.png" alt="einstain">
+        </a>
+      </div>
+
+    </div><!-- end .footer -->
+
+  </ng-container>
+
+</div><!-- end .wrap -->
+
+

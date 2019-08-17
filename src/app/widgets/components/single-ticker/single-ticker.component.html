@@ -1,0 +1,27 @@
+<div class="wrap" [ngStyle]="theme">
+
+  <div *ngIf="loader" class="loader-container">
+    <div class="loading"></div>
+  </div>
+
+  <ng-container *ngIf="!loader">
+
+    <div *ngIf="price" class="content">
+      <div class="currency">{{coin}}/USD</div>
+      <div class="price" [ngClass]="animate" (animationend)="clearAnimationClass()">
+        {{price | rounder | symbolPipe: '$': true}}
+      </div>
+
+      <div class="change" [ngClass]="animate">
+        <i class="fa" [ngClass]="triangleClass" aria-hidden="true"></i>
+        <div class="change_data {{highlightClass}}">
+          <span>{{(!percent)? '—' : percent | rounder | symbolPipe: '%'}}</span>
+          &nbsp;
+          <span>({{(!change)? '—' : change | rounder | symbolPipe: '$': true}})</span>
+        </div>
+      </div>
+    </div><!-- end .content -->
+
+  </ng-container>
+
+</div><!-- end .wrap -->

@@ -1,0 +1,221 @@
+<div class="container">
+
+  <div class="row">
+
+    <div class="col-12">
+      <div class="navbar">
+        <a [routerLink]="['']" class="back">&larr; Back to All Widgets</a>
+      </div>
+    </div>
+
+    <div class="col-12">
+      <div class="content-wrap">
+        <h1 class="title">{{meta.title}}</h1>
+        <div [innerHtml]="meta.description | sanitizerPipe">
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12">
+      <div [ngClass]='widgetProps.classes.widgetWrap' class="widget-wrap d-flex">
+        <div class="widget">
+          <div *ngIf="loader" class="loader-container">
+            <div class="loading"></div>
+          </div>
+          <div [hidden]="loader">
+            <!-- <iframe style="border: none" [ngStyle]="widgetProps.styles.iframe" [src]="src" #frame></iframe> -->
+            <iframe style="border: none" [ngStyle]="IFrimeStyle ? IFrimeStyle : widgetProps.styles.iframe" [src]="src" #frame></iframe>
+          </div>
+        </div>
+        <div class="settings">
+          <div class="settings-title">Widget Settings</div>
+          <div class="opts">
+
+            <form>
+
+              <div class="opts-row" *ngIf="widgetProps.currencySwitcher">
+                <div class="title">Currency</div>
+
+                <div class="opts-box row">
+
+                  <ng-container *ngFor="let coin of coins">
+                    <div [ngClass]="widgetProps.classes.settings" *ngIf="coin.long !== 'other'">
+                      <input [id]="coin.long" type="radio" name="coin" [checked]="currentCoin === coin.short" (change)="onChangeCoin(coin.short)">
+                      <label [for]="coin.long" class="opt d-flex align-items-center">
+                        <div class="point"></div>
+                        <span class="name">{{coin.long}}</span>
+                      </label>
+                    </div>
+                  </ng-container>
+
+                </div><!-- end .row -->
+
+              </div>
+
+            <div class="opts-row" *ngIf="widgetProps.styleSwitcher">
+              <div class="title">Style</div>
+
+              <div class="opts-box row">
+
+                <ng-container *ngFor="let opt of widgetStyles">
+                  <div [ngClass]="widgetProps.classes.settings">
+                    <input [id]="opt" type="radio" name="style" [checked]="currentStyle === opt" (change)="onStyle(opt)">
+                    <label [for]="opt" class="opt d-flex align-items-center">
+                      <div class="point"></div>
+                      <span class="name">{{opt}}</span>
+                    </label>
+                  </div>
+                </ng-container>
+
+              </div><!-- end .row -->
+
+            </div>
+
+            <div class="opts-row">
+              <div class="title">Theme Color</div>
+
+              <div class="opts-box row">
+
+                <ng-container *ngFor="let opt of themes">
+                  <div [ngClass]="widgetProps.classes.settings">
+                    <input [id]="opt" type="radio" name="theme" [checked]="currentColor == opt" (change)="onChangeColor(opt)">
+                    <label [for]="opt" class="opt d-flex align-items-center">
+                      <div class="point"></div>
+                      <span class="name">{{opt}}</span>
+                    </label>
+                  </div>
+                </ng-container>
+
+              </div><!-- end .row -->
+
+            </div>
+
+            <div class="opts-row">
+              <div class="title">Border</div>
+
+              <div class="opts-box row">
+
+                <div [ngClass]="widgetProps.classes.settings">
+                  <input id="border" type="radio" name="border" [checked]="false" (change)="onBorder(true)">
+                  <label for="border" class="opt d-flex align-items-center">
+                    <div class="point"></div>
+                    <span class="name">Border</span>
+                  </label>
+                </div>
+
+                <div [ngClass]="widgetProps.classes.settings">
+                  <input id="no-border" type="radio" name="border" [checked]="true" (change)="onBorder(false)">
+                  <label for="no-border" class="opt d-flex align-items-center">
+                    <div class="point"></div>
+                    <span class="name">No Border</span>
+                  </label>
+                </div>
+
+              </div><!-- end .row -->
+
+            </div>
+
+              <div class="opts-row">
+                <div class="title">Shadow</div>
+
+                <div class="opts-box row">
+                  <ng-container *ngFor="let opt of shadows; let i = index">
+                    <div [ngClass]="widgetProps.classes.settings">
+                      <input [id]="opt" type="radio" name="shadow" [checked]="i === 0" (change)="onChangeShadow(opt)">
+                      <label [for]="opt" class="opt d-flex align-items-center">
+                        <div class="point"></div>
+                        <span class="name">{{opt}}</span>
+                      </label>
+                    </div>
+                  </ng-container>
+
+                </div><!-- end .row -->
+
+              </div>
+
+              <div class="opts-row" *ngIf="widgetProps.changeShape">
+                <div class="title">Shape</div>
+
+                <div class="opts-box row">
+
+                  <ng-container *ngFor="let opt of shapes">
+                    <div [ngClass]="widgetProps.classes.settings">
+                      <input [id]="opt" type="radio" name="shape" [checked]="currentShape == opt" (change)="onShape(opt)">
+                      <label [for]="opt" class="opt d-flex align-items-center">
+                        <div class="point"></div>
+                        <span class="name">{{opt}}</span>
+                      </label>
+                    </div>
+                  </ng-container>
+
+                </div><!-- end .row -->
+
+              </div>
+
+              <div class="opts-row" *ngIf="widgetProps.highlightSwitcher">
+                <div class="title">Highlight realtime update</div>
+
+                <div class="opts-box row">
+
+                  <ng-container *ngFor="let opt of relatimeUpdateOptions">
+                    <div [ngClass]="widgetProps.classes.settings">
+                      <input [id]="opt" type="radio" name="highlight" [checked]="currentRealtime == opt" (change)="onRealtime(opt)">
+                      <label [for]="opt" class="opt d-flex align-items-center">
+                        <div class="point"></div>
+                        <span class="name">{{opt}}</span>
+                      </label>
+                    </div>
+                  </ng-container>
+
+                </div><!-- end .row -->
+
+              </div>
+              <!-- HighlightRealtimeUpdate: true, -->
+
+              <div class="opts-row" *ngIf="widgetProps.demension">
+                <div class="title">
+                  Demension
+                </div>
+
+                <div class="opts-box d-flex align-content-center flex-wrap">
+                  <div class="input-option left" *ngIf="!widgetProps.onlyWidth">
+                    <label for="opt-y">Height (px)</label>
+                    <input appNumberOnly type="text" id="opt-y" [(ngModel)]="height" name="height">
+                  </div>
+
+                  <div class="input-option">
+                    <label for="opt-x">Width (px)</label>
+                    <input appNumberOnly type="text" id="opt-x" [(ngModel)]="width" name="width">
+                  </div>
+                </div>
+              </div>
+
+              <div class="opts-btn-wrap">
+                <input class="btn active" type="button" value="Apply" (click)="onSubmit()">
+                <input class="btn" type="button" value="Reset" (click)="onReset()">
+              </div>
+
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 codegen-container">
+      <div class="codegen">
+        <div class="codegen-title">Generated HTML code</div>
+        <div class="codegen-row">
+          <textarea readonly #textarea></textarea>
+          <a class="copy" [appCopy]="textarea">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+              <path d="M433.941 65.941l-51.882-51.882A48 48 0 0 0 348.118 0H176c-26.51 0-48 21.49-48 48v48H48c-26.51 0-48 21.49-48 48v320c0 26.51 21.49 48 48 48h224c26.51 0 48-21.49 48-48v-48h80c26.51 0 48-21.49 48-48V99.882a48 48 0 0 0-14.059-33.941zM266 464H54a6 6 0 0 1-6-6V150a6 6 0 0 1 6-6h74v224c0 26.51 21.49 48 48 48h96v42a6 6 0 0 1-6 6zm128-96H182a6 6 0 0 1-6-6V54a6 6 0 0 1 6-6h106v88c0 13.255 10.745 24 24 24h88v202a6 6 0 0 1-6 6zm6-256h-64V48h9.632c1.591 0 3.117.632 4.243 1.757l48.368 48.368a6 6 0 0 1 1.757 4.243V112z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- end .row -->
+
+</div><!-- end .container -->

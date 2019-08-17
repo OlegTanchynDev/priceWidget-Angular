@@ -1,0 +1,81 @@
+
+<ng-container [ngSwitch]="currentStyle">
+  <div class="container" [ngStyle]="theme" *ngSwitchCase="'classic'">
+
+    <div *ngIf="loader" class="loader-container">
+      <div class="loading"></div>
+    </div>
+
+    <ng-container *ngIf="!loader">
+      <div class="info-content-color row" *ngIf="coinInfo">
+        <img *ngIf="coinInfo" class="middle-img" src="{{coinInfo ? coinInfo.image.large : ''}}" alt="BitCoin">
+        <span *ngIf="coinInfo.localization" class="info-text">{{coinInfo.localization.en}} ({{coinInfo.symbol |
+          uppercase}})</span>
+        <span class="info-text" (animationend)="clearAnimationClass()" [ngClass]="animate">{{price | rounder |
+          symbolPipe: '$': true}}</span>
+        <span (animationend)="clearAnimationClass()" [ngClass]="animate">
+          <i [ngClass]="triangleClass" class="fa">
+          </i>
+          <span [ngClass]="highlightClass" class="info-changer">{{(!changer)? '—' : changer | rounder | symbolPipe: '$
+            '}}</span>
+          /
+          <span [ngClass]="highlightClass" class="info-changer">{{(!percent)? '—' : percent | rounder | symbolPipe: '%'}}</span>
+        </span>
+        <div class="logo-img">
+          <a href="https://einstein.exchange/">
+            <img src="./assets/img/widget_circle_logo.png" alt="">
+            <img src="./assets/img/widget_logo.png" alt="" srcset="">
+          </a>
+        </div>
+      </div>
+      <div class="info-content-black row">
+        <h4 class="col-12 col-sm-6 col-lg-2">Low 24h: <p>{{Low24h | number | symbolPipe: '$ ': true}}</p>
+        </h4>
+        <h4 class="col-12 col-sm-6 col-lg-3">Hight 24h: <p>{{Hight24h | number | symbolPipe: '$ ': true}}</p>
+        </h4>
+        <h4 class="col-12 col-sm-6 col-lg-3">Vol 24h: <p>{{Vol24h | number | symbolPipe: '$ ': true}}</p>
+        </h4>
+        <h4 class="col-12 col-sm-6 col-lg-4">Total Vol 24h: <p>{{TotalVol24h | number | symbolPipe: '$ ': true}}</p>
+        </h4>
+      </div>
+    </ng-container>
+  </div>
+
+  <div class="container container-advanced" [ngStyle]="theme" *ngSwitchCase="'advanced'">
+
+    <div *ngIf="loader" class="loader-container">
+      <div class="loading"></div>
+    </div>
+
+    <ng-container *ngIf="!loader">
+      <div class="info-content-color row info-content-color-advanced">
+        <img *ngIf="coinInfo" class="middle-img" src="{{coinInfo ? coinInfo.image.large : ''}}" alt="BitCoin">
+        <span class="info-text info-text-advanced">Bitcoin (BTC)</span>
+        <span class="info-text info-text-advanced" (animationend)="clearAnimationClass()" [ngClass]="animate">{{price |
+          rounder | symbolPipe: '$': true}}</span>
+        <span (animationend)="clearAnimationClass()" [ngClass]="animate"><i [ngClass]="triangleClass" class="fa"><span
+              class="thirdSpan-advanced">{{(!changer)? '—' : changer | rounder | symbolPipe: '$ '}} / {{(!percent)? '—' :
+              percent | rounder | symbolPipe: '%'}}</span></i></span>
+        <div class="logo-img logo-img-advanced">
+          <a href="https://einstein.exchange/">
+            <img src="./assets/img/widget_circle_logo.png" alt="">
+            <img src="./assets/img/widget_logo.png" alt="" srcset="">
+          </a>
+        </div>
+      </div>
+      <div class="info-content-black row info-content-black-advanced">
+        <h4 class="col-12 col-sm-6 col-lg-2 col-advanced">Low 24h: <p>{{Low24h | number | symbolPipe: '$ ': true}}</p>
+        </h4>
+        <h4 class="col-12 col-sm-6 col-lg-3 col-advanced">Hight 24h: <p>{{Hight24h | number | symbolPipe: '$ ': true}}</p>
+        </h4>
+        <h4 class="col-12 col-sm-6 col-lg-3 col-advanced">Vol 24h: <p>{{Vol24h | number | symbolPipe: '$ ': true}}</p>
+        </h4>
+        <h4 class="col-12 col-sm-6 col-lg-4 col-advanced">Total Vol 24h: <p>{{TotalVol24h | number | symbolPipe: '$ ':
+            true}}</p>
+        </h4>
+        <h4 class=" col-advanced">Market Cap: <p>{{MarketCap | number | symbolPipe: '$ ': true}}</p>
+        </h4>
+      </div>
+    </ng-container>
+  </div>
+</ng-container>

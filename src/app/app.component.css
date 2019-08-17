@@ -1,0 +1,16 @@
+.content {
+  color: #fff;
+  opacity: .9;
+  font-size: 1em;
+  font-family: "Roboto", sans-serif;
+  padding: 15px 20px;
+  background-color: rgba(0, 0, 0, .2);
+  background: url(/assets/blur-bg-blurred.jpg) fixed;
+  background-size: auto;
+  background-position: center;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, .25);
+  box-sizing: border-box;
+  overflow: hidden;
+}

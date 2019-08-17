@@ -1,0 +1,162 @@
+
+<ng-container [ngSwitch]="currentStyle">
+  <div class="container container-classic" [ngStyle]="theme" *ngSwitchCase="'classic'">
+
+    <div *ngIf="loader" class="loader-container">
+      <div class="loading"></div>
+    </div>
+
+    <ng-container *ngIf="!loader">
+      <div class="img-content">
+        <img src="{{coinInfo ? coinInfo.image.large : ''}}" alt="">
+      </div>
+      <div class="info-block ">
+        <ul>
+          <li><span class="currency ">{{ coin }}/USD</span></li>
+          <li [ngClass]="highlightClass" class="ratio"><i [ngClass]="triangleClass" class="fa"></i>&nbsp;<span
+              [ngClass]="highlightClass">{{
+              percent | rounder}}%</span></li>
+        </ul>
+      </div>
+      <div class="data-chart">
+        <div class="chart-value-block chart-value-block-classic">
+          <span>{{currentChartValue | rounder}}</span>
+        </div>
+        <div class="chart-wrapper chart-wrapper-classic" *ngIf="chartRenderData">
+          <app-base-chart [data]="chartRenderData" (mouseOver)="mouseOver($event)" [type]="'small-chart'"></app-base-chart>
+        </div>
+      </div>
+      <a href="https://einstein.exchange/register" class="logo-container">
+        <img src="./assets/img/widget_circle_logo.png" alt="">
+      </a>
+    </ng-container>
+  </div>
+
+  <div class="container container-advanced-01" [ngStyle]="theme" *ngSwitchCase="'advanced01'">
+
+    <div *ngIf="loader" class="loader-container">
+      <div class="loading"></div>
+    </div>
+
+    <ng-container *ngIf="!loader">
+      <div class="img-content img-content-advanced-01">
+        <img src="{{coinInfo ? coinInfo.image.large : ''}}" alt="">
+      </div>
+      <div class="info-block info-block-advanced-01">
+        <ul>
+          <li><span class="currency currency-advanced-01">{{ coin }}/USD</span></li>
+          <li [ngClass]="highlightClass" class="ratio ratio-advanced-01"><i [ngClass]="triangleClass" class="fa"></i>&nbsp;<span
+              [ngClass]="highlightClass">{{
+              percent | rounder}}%</span></li>
+        </ul>
+      </div>
+      <div class="data-chart data-chart-advanced-01">
+        <div class="chart-value-block chart-value-block-advanced-01">
+          <span>{{currentChartValue | rounder}}</span>
+        </div>
+        <div class="chart-wrapper chart-wrapper-advanced-01" *ngIf="chartRenderData">
+          <app-base-chart [data]="chartRenderData" (mouseOver)="mouseOver($event)" [type]="'small-chart'"></app-base-chart>
+        </div>
+      </div>
+      <a href="https://einstein.exchange/register" class="logo-container logo-container-advanced-01">
+        <img src="./assets/img/widget_circle_logo.png" alt="">
+      </a>
+    </ng-container>
+  </div>
+
+  <div class="container container-advanced-02" [ngStyle]="theme" *ngSwitchCase="'advanced02'">
+
+    <div *ngIf="loader" class="loader-container">
+      <div class="loading"></div>
+    </div>
+
+    <ng-container *ngIf="!loader">
+      <div class="img-content img-content-advanced-02">
+        <img src="{{coinInfo ? coinInfo.image.large : ''}}" alt="">
+      </div>
+      <div class="info-block info-block-advanced-02">
+        <ul>
+          <li><span class="currency currency-advanced-02">{{ coin }}/USD</span></li>
+          <li [ngClass]="highlightClass" class="ratio ratio-advanced-02"><i [ngClass]="triangleClass" class="fa"></i>&nbsp;<span
+              [ngClass]="highlightClass">{{
+              percent | rounder}}%</span></li>
+        </ul>
+      </div>
+      <div class="data-chart data-chart-advanced-02">
+        <div class="chart-value-block chart-value-block-advanced-02">
+          <span>{{currentChartValue | rounder}}</span>
+        </div>
+        <div class="chart-wrapper chart-wrapper-advanced-02" *ngIf="chartRenderData">
+          <app-base-chart [data]="chartRenderData" (mouseOver)="mouseOver($event)" [type]="'small-chart'"></app-base-chart>
+        </div>
+      </div>
+      <a href="https://einstein.exchange/register" class="logo-container logo-container-advanced-02">
+        <img src="./assets/img/widget_circle_logo.png" alt="">
+      </a>
+    </ng-container>
+  </div>
+
+  <div class="container container-advanced-03" [ngStyle]="theme" *ngSwitchCase="'advanced03'">
+
+    <div *ngIf="loader" class="loader-container">
+      <div class="loading"></div>
+    </div>
+
+    <ng-container *ngIf="!loader">
+      <div class="img-content img-content-advanced-03">
+        <img src="{{coinInfo ? coinInfo.image.large : ''}}" alt="">
+      </div>
+      <div class="info-block info-block-advanced-03">
+        <ul>
+          <li><span class="currency currency-advanced-03">{{ coin }}/USD</span></li>
+          <li [ngClass]="highlightClass" class="ratio ratio-advanced-03"><i [ngClass]="triangleClass" class="fa"></i>&nbsp;<span
+              [ngClass]="highlightClass">{{
+              percent | rounder}}%</span></li>
+        </ul>
+      </div>
+      <div class="data-chart data-chart-advanced-03">
+        <div class="chart-value-block chart-value-block-advanced-03">
+          <span>{{currentChartValue | rounder}}</span>
+        </div>
+        <div class="chart-wrapper chart-wrapper-advanced-03" *ngIf="chartRenderData">
+          <app-base-chart [data]="chartRenderData" (mouseOver)="mouseOver($event)" [type]="'small-chart'"></app-base-chart>
+        </div>
+      </div>
+      <a href="https://einstein.exchange/register" class="logo-container logo-container-advanced-03">
+        <img src="./assets/img/widget_circle_logo.png" alt="">
+      </a>
+    </ng-container>
+  </div>
+
+<div class="container container-advanced-04" [ngStyle]="theme" *ngSwitchCase="'advanced04'">
+
+  <div *ngIf="loader" class="loader-container">
+    <div class="loading"></div>
+  </div>
+
+  <ng-container *ngIf="!loader">
+    <div class="img-content img-content-advanced-04">
+      <img src="{{coinInfo ? coinInfo.image.large : ''}}" alt="">
+    </div>
+    <div class="info-block info-block-advanced-04">
+      <ul>
+        <li><span class="currency currency-advanced-04">{{ coin }}/USD</span></li>
+        <li [ngClass]="highlightClass" class="ratio ratio-advanced-04"><i [ngClass]="triangleClass" class="fa"></i>&nbsp;<span
+            [ngClass]="highlightClass">{{
+            percent | rounder}}%</span></li>
+      </ul>
+    </div>
+    <div class="data-chart data-chart-advanced-04">
+      <div class="chart-value-block chart-value-block-advanced-04">
+        <span>{{currentChartValue | rounder}}</span>
+      </div>
+      <div class="chart-wrapper chart-wrapper-advanced-04" *ngIf="chartRenderData">
+        <app-base-chart [data]="chartRenderData" (mouseOver)="mouseOver($event)" [type]="'small-chart'"></app-base-chart>
+      </div>
+    </div>
+    <a href="https://einstein.exchange/register" class="logo-container logo-container-advanced-04">
+      <img src="./assets/img/widget_circle_logo.png" alt="">
+    </a>
+  </ng-container>
+</div>
+</ng-container>

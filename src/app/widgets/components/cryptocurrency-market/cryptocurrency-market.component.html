@@ -1,0 +1,69 @@
+<div class="wrap" [ngStyle]="theme">
+
+
+  <div *ngIf="loader" class="loader-container">
+    <div class="loading"></div>
+  </div>
+
+  <table *ngIf="!loader">
+    <thead>
+    <tr>
+      <th>
+        <div class="title">COIN NAME</div>
+        <div class="desc">{{total}} results</div>
+      </th>
+      <th>
+        <span>MKT CAP</span>
+        <button (click)="onOrder()">
+          <i [ngClass]="(order === 'asc') ? 'fa fa-chevron-down' : 'fa fa-chevron-up'" aria-hidden="true"></i>
+        </button>
+      </th>
+      <th>FD MKT CAP</th>
+      <th>CLOSE</th>
+      <th>AVAIL COINS</th>
+      <th>TOTAL COINS</th>
+      <th>TRADED VOL</th>
+      <th class="last">CHG, %</th>
+    </tr>
+    </thead>
+    <tbody *ngIf="coins" class="body" (scroll)="onScroll($event)">
+      <tr class="media-thead">
+        <th>
+          <div class="title">COIN NAME</div>
+          <div class="desc">{{total}} results</div>
+        </th>
+        <th>
+          <span>MKT CAP</span>
+          <button (click)="onOrder()">
+            <i [ngClass]="(order === 'asc') ? 'fa fa-chevron-down' : 'fa fa-chevron-up'" aria-hidden="true"></i>
+          </button>
+        </th>
+        <th>FD MKT CAP</th>
+        <th>CLOSE</th>
+        <th>AVAIL COINS</th>
+        <th>TOTAL COINS</th>
+        <th>TRADED VOL</th>
+        <th class="last">CHG, %</th>
+      </tr>
+      <tr *ngFor="let coin of coins">
+        <td>
+          <div>
+            <img src="{{coin.image.small}}" width="27" height="26" alt="">
+          </div>
+          <div>
+            {{ coin.name }}
+          </div>
+        </td>
+        <td>{{ (coin.market_data.market_cap.usd | rounder: true) || "0.0" }}</td>
+        <td> --- </td>
+        <td>{{coin.market_data.current_price.usd | rounder | symbolPipe: '$': true}}</td>
+        <td>{{coin.market_data.circulating_supply | rounder: true}}</td>
+        <td> --- </td>
+        <td>{{coin.market_data.circulating_supply | rounder: true}}</td>
+        <td  class="last" [ngClass]="((coin.market_data.price_change_percentage_24h | rounder) > 0) ? 'plus' : 'minus'">
+          {{coin.market_data.price_change_percentage_24h | rounder | symbolPipe: '%'}}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

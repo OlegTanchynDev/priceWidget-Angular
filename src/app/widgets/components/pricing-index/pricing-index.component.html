@@ -1,0 +1,102 @@
+<div #styleContainer></div>
+
+<div class="wrap" [ngStyle]="theme">
+
+  <div *ngIf="loader" class="loader-container">
+    <div class="loading"></div>
+  </div>
+
+  <ng-container *ngIf="!loader">
+
+    <div *ngIf="widgetData" class="content">
+
+      <div class="info">
+        <div class="currency">{{coin}}/USD</div>
+        <div class="price">
+          <div class="current_price">{{widgetData.price | rounder | symbolPipe: '$': true}}</div>
+          <div class="change {{labelClass}} {{animate}}" (animationend)="clearAnimationClass()">
+            <i class="fa" [ngClass]="triangleClass" aria-hidden="true"></i>
+            <span [ngClass]="highlightClass">{{(!widgetData.percent)? '—' : widgetData?.percent | rounder | symbolPipe: '%'}}</span>
+          </div>
+        </div>
+        <div class="points">
+          <div class="higher">High {{widgetData.maxPrice | rounder | symbolPipe: '$': true}}</div>
+          <div class="lower">Low {{widgetData.minPrice | rounder | symbolPipe: '$': true}}</div>
+        </div>
+        <div class="volume">Volume: {{widgetData.blocks | rounder: 2 : true | symbolPipe: '$': true }}</div>
+      </div>
+
+      <div class="chart">
+        <app-base-chart [data]="chartRenderData" [type]="'pricing-index'"></app-base-chart>
+        <a href="https://einstein.exchange/register" target="_blank" class="link">
+          <img src="./assets/img/widget_logo.png" alt="einstain">
+        </a>
+      </div>
+
+    </div><!-- end .content -->
+
+    <div *ngIf="widgetData" class="footer">
+      <table class="converter">
+        <tr>
+          <th class="sym-head">SYM</th>
+          <th class="asset">ASSET</th>
+          <th class="asset">USD</th>
+          <th class="asset">EUR</th>
+          <th class="asset">XBT</th>
+        </tr>
+        <tr>
+          <td class="sym">ETH</td>
+          <td class="asset">Ether</td>
+          <td class="value">{{widgetData.converter.ETH.USD | rounder | symbolPipe: '$': true}}</td>
+          <td class="value">{{widgetData.converter.ETH.EUR | rounder | symbolPipe: '€': true}}</td>
+          <td class="value">{{widgetData.converter.ETH.XBT | rounder: 4 : true | symbolPipe: 'B ': true}}</td>
+        </tr>
+        <tr>
+          <td class="sym">BCH</td>
+          <td class="asset">Bitcoin Cash</td>
+          <td class="value">{{widgetData.converter.BTC.USD | rounder | symbolPipe: '$': true}}</td>
+          <td class="value">{{widgetData.converter.BTC.EUR | rounder | symbolPipe: '€': true}}</td>
+          <td class="value">{{widgetData.converter.BTC.XBT | rounder: 4 : true | symbolPipe: 'B ': true}}</td>
+        </tr>
+        <tr>
+          <td class="sym">ZEC</td>
+          <td class="asset">ZCash</td>
+          <td class="value">{{widgetData.converter.ZEC.USD | rounder | symbolPipe: '$': true}}</td>
+          <td class="value">{{widgetData.converter.ZEC.EUR | rounder | symbolPipe: '€': true}}</td>
+          <td class="value">{{widgetData.converter.ZEC.XBT | rounder: 4 : true | symbolPipe: 'B ': true}}</td>
+        </tr>
+        <tr>
+          <td class="sym">DASH</td>
+          <td class="asset">Dash</td>
+          <td class="value">{{widgetData.converter.DASH.USD | rounder | symbolPipe: '$': true}}</td>
+          <td class="value">{{widgetData.converter.DASH.EUR | rounder | symbolPipe: '€': true}}</td>
+          <td class="value">{{widgetData.converter.DASH.XBT | rounder: 4 : true | symbolPipe: 'B ': true}}</td>
+        </tr>
+        <tr>
+          <td class="sym">LTC</td>
+          <td class="asset">Litecoin</td>
+          <td class="value">{{widgetData.converter.LTC.USD | rounder | symbolPipe: '$': true}}</td>
+          <td class="value">{{widgetData.converter.LTC.EUR | rounder | symbolPipe: '€': true}}</td>
+          <td class="value">{{widgetData.converter.LTC.XBT | rounder: 4 : true | symbolPipe: 'B ': true}}</td>
+        </tr>
+        <tr>
+          <td class="sym">ETC</td>
+          <td class="asset">Ethere Coin</td>
+          <td class="value">{{widgetData.converter.ETC.USD | rounder | symbolPipe: '$': true}}</td>
+          <td class="value">{{widgetData.converter.ETC.EUR | rounder | symbolPipe: '€': true}}</td>
+          <td class="value">{{widgetData.converter.ETC.XBT | rounder: 4 : true | symbolPipe: 'B ': true}}</td>
+        </tr>
+        <tr>
+          <td class="sym">XMR</td>
+          <td class="asset">Monero</td>
+          <td class="value">{{widgetData.converter.XMR.USD | rounder | symbolPipe: '$': true}}</td>
+          <td class="value">{{widgetData.converter.XMR.EUR | rounder | symbolPipe: '€': true}}</td>
+          <td class="value">{{widgetData.converter.XMR.XBT | rounder: 4 : true | symbolPipe: 'B ': true}}</td>
+        </tr>
+      </table>
+    </div><!-- end .footer -->
+
+  </ng-container>
+
+</div><!-- end .wrap -->
+

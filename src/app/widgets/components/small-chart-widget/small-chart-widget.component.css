@@ -1,0 +1,177 @@
+/* === {FOOTER AT BOTTOM} === */
+:host {
+  width: 100%;
+  max-width: 100%;
+}
+
+.wrap {
+    display: flex;
+    flex-direction: column;
+    height: 310px;
+    border-radius: 10px;
+    box-shadow: 1px 1.7px 5px rgba(121, 58, 58, 0.2);
+  }
+  .content {
+    flex: auto;
+    width: 100%;
+  }
+  /* === {END FOOTER AT BOTTOM} === */
+  
+  .wrap-media {
+    width: 300px;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+  
+  /* === {CONTENT} === */
+  .content .top_line {
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+  .content .price_wrap {
+    font-family: "Open Sans", sans-serif;
+    text-align: center;
+  }
+  .content .currency {
+    font-size: 22px;
+  }
+  .content .price {
+    font-size: 28px;
+    font-weight: bold;
+  }
+  .content .change {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    /* color: rgb(16,169,41); */
+    font-family: "Open Sans", sans-serif;
+    text-align: center;
+  }
+  .top_line .change i {
+    font-size: 20px;
+    margin-right: 5px;
+    visibility: hidden;
+  }
+  .top_line .change i.down,
+  .top_line .change.minus {
+    /* color: #da0000; */
+    visibility: visible;
+  }
+  .top_line .change i.up,
+  .top_line .change.plus {
+    /* color: #7dd608; */
+    visibility: visible;
+  }
+  .color-down{
+    color: #da0000;
+  }
+  .color-up{
+    color: #10a929;
+  }
+  /* === {END CONTENT} === */
+  
+  /* === {FOOTER} === */
+  .footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6px 14px;
+    box-sizing: border-box;
+  }
+  .footer .btn_group {
+    display: flex;
+    align-items: center;
+    margin-right: 40px;
+  }
+  .footer .btn_group button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 34px;
+    height: 22px;
+    font-size: 12px;
+    color: rgb(40,40,41);
+    font-family: "Open Sans", sans-serif;
+    text-align: center;
+    border: none;
+    background-color: #dfdfdf;
+    outline: none;
+    cursor: pointer;
+  }
+  .footer .btn_group button:first-of-type {
+    border-radius: 5px 0 0 5px;
+  }
+  .footer .btn_group button:nth-of-type(n+1) {
+    margin-left: 1px;
+  }
+  .footer .btn_group button:last-of-type {
+    border-radius: 0 5px 5px 0;
+  }
+  .footer .btn_group button.clicked {
+    color: #ffffff;
+    background-color: #4d4d4e;
+  }
+  .footer .input_group {
+    margin-right: 80px;
+  }
+  .footer .input_group input[type=text] {
+    width: 84px;
+    border-radius: 5px;
+    background-color: #ffffff;
+    border: 1px solid #b8b8b8;
+    font-size: 12px;
+    color: rgb(40,40,41);
+    font-family: "Open Sans", sans-serif;
+    text-align: center;
+  }
+  .footer .link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .footer .link .char {
+    opacity: .7;
+    font-size: 14px;
+    color: rgb(243,243,243);
+    font-family: "Open Sans", sans-serif;
+  }
+  .footer .link img {
+    display: block;
+    max-width: 64px;
+    border: none;
+  }
+  /* === {END FOOTER} === */
+  
+  app-base-chart /deep/ #bitcoin-price-widget {
+    height: 180px;
+  }
+  app-base-chart /deep/ #bitcoin-price-widget circle {
+    fill: none !important;
+    stroke: none !important;
+    stroke-width: 1px !important;
+  }
+  app-base-chart /deep/ #bitcoin-price-widget g:first-of-type > g:nth-of-type(2) g > circle:first-of-type,
+  app-base-chart /deep/ #bitcoin-price-widget g:nth-of-type(2) > g:nth-of-type(2) g > circle:first-of-type {
+    stroke-width: 1px !important;
+    stroke: none !important;
+  }
+  app-base-chart /deep/ #bitcoin-price-widget g:first-of-type > g:nth-of-type(2) g > circle:first-of-type,
+  app-base-chart /deep/ #bitcoin-price-widget g:nth-of-type(2) > g:nth-of-type(2) g > circle:first-of-type {
+    fill: #fff!important;
+  }
+  app-base-chart /deep/ #bitcoin-price-widget g:first-of-type > g:nth-of-type(2) g > path,
+  app-base-chart /deep/ #bitcoin-price-widget g:nth-of-type(2) > g:nth-of-type(2) g > path {
+    stroke-dasharray: 6;
+  }
+  .price {
+    padding-right: 30px;
+  }
+  
+  
+  

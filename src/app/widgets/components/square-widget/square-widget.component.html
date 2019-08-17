@@ -1,0 +1,184 @@
+<!-- <div class="container" [ngStyle]="theme">
+
+  <div *ngIf="loader" class="loader-container">
+    <div class="loading"></div>
+  </div>
+
+  <ng-container *ngIf="!loader">
+    <div class="img-content">
+      <img src="{{coinInfo ? coinInfo.image.large : ''}}" alt="">
+    </div>
+    <div class="info-content">
+      <ul>
+        <li class="info-text" (animationend)="clearAnimationClass()" [ngClass]="animate"><span>{{price | rounder | symbolPipe: '$': true}}</span></li>
+        <li class="info-ratio"><i [ngClass]="triangleClass" (animationend)="clearAnimationClass()" [ngClass]="animate" class="fa"></i> <span [ngClass]="highlightClass">{{ratio | rounder | symbolPipe: '$': true}}</span>&nbsp;/&nbsp;<span [ngClass]="highlightClass">{{ percent | rounder}}%</span></li>
+        <li class="info-text"><span>{{coinInfo ? coinInfo.name : ''}} ({{coin}})</span></li>
+      </ul>
+    </div>
+    <a class="logo-container" href="https://einstein.exchange/register">
+      <img src="./assets/img/widget_circle_logo.png" alt="">
+    </a>
+  </ng-container>
+</div> -->
+<ng-container [ngSwitch]="currentStyle">
+  <div class="container" [ngStyle]="theme" *ngSwitchCase="'classic'">
+
+    <div *ngIf="loader" class="loader-container">
+      <div class="loading"></div>
+    </div>
+
+    <ng-container *ngIf="!loader">
+      <div class="img-content">
+        <img src="{{coinInfo ? coinInfo.image.large : ''}}" alt="">
+      </div>
+      <div class="info-content">
+        <ul>
+          <li class="info-text" (animationend)="clearAnimationClass()" [ngClass]="animate"><span>{{price | rounder |
+              symbolPipe: '$': true}}</span></li>
+          <li class="info-ratio"><i [ngClass]="triangleClass" (animationend)="clearAnimationClass()" [ngClass]="animate"
+              class="fa"></i> <span [ngClass]="highlightClass">{{ratio | rounder | symbolPipe: '$': true}}</span>&nbsp;/&nbsp;<span
+              [ngClass]="highlightClass">{{ percent | rounder}}%</span></li>
+          <li class="info-text"><span>{{coinInfo ? coinInfo.name : ''}} ({{coin}})</span></li>
+        </ul>
+      </div>
+      <a class="logo-container" href="https://einstein.exchange/register">
+        <img src="./assets/img/widget_circle_logo.png" alt="">
+      </a>
+    </ng-container>
+  </div>
+
+  <div class="container container-mini" [ngStyle]="theme" *ngSwitchCase="'mini'">
+
+    <div *ngIf="loader" class="loader-container">
+      <div class="loading"></div>
+    </div>
+
+    <ng-container *ngIf="!loader">
+      <div class="img-content img-content-mini">
+        <img src="{{coinInfo ? coinInfo.image.large : ''}}" alt="">
+        <img src="{{coinInfo ? coinInfo.image.large : ''}}" alt="">
+      </div>
+      <div class="info-content">
+        <ul>
+          <li class="info-text info-text-mini" (animationend)="clearAnimationClass()" [ngClass]="animate"><span>{{price
+              | rounder | symbolPipe: '$': true}}</span></li>
+          <li class="info-ratio info-ratio-mini"><i [ngClass]="triangleClass" (animationend)="clearAnimationClass()"
+              [ngClass]="animate" class="fa"></i> <span [ngClass]="highlightClass">{{ratio | rounder | symbolPipe: '$': true}}</span>&nbsp;/&nbsp;<span
+              [ngClass]="highlightClass">{{ percent | rounder}}%</span></li>
+          <li class="info-text info-text-mini"><span><b>{{coinInfo ? coinInfo.name : ''}} (</b>{{coin}}<b>)</b></span></li>
+        </ul>
+      </div>
+      <a class="logo-container logo-container-mini" href="https://einstein.exchange/register">
+        <img src="./assets/img/widget_circle_logo.png" alt="">
+      </a>
+    </ng-container>
+  </div>
+
+  <div class="container container-advanced-01" [ngStyle]="theme" *ngSwitchCase="'advanced01'">
+
+    <div *ngIf="loader" class="loader-container">
+      <div class="loading"></div>
+    </div>
+
+    <ng-container *ngIf="!loader">
+      <div class="img-content img-content-advanced-01">
+        <img src="{{coinInfo ? coinInfo.image.large : ''}}" alt="">
+        <img src="{{coinInfo ? coinInfo.image.large : ''}}" alt="">
+      </div>
+      <div class="info-content">
+        <ul>
+          <li class="info-text info-text-advanced-01" (animationend)="clearAnimationClass()" [ngClass]="animate"><span>{{price
+              | rounder | symbolPipe: '$': true}}</span></li>
+          <li class="info-ratio info-ratio-advanced-01"><i [ngClass]="triangleClass" (animationend)="clearAnimationClass()"
+              [ngClass]="animate" class="fa"></i> <span [ngClass]="highlightClass">{{ratio | rounder | symbolPipe: '$': true}}</span>&nbsp;/&nbsp;<span
+              [ngClass]="highlightClass">{{ percent | rounder}}%</span></li>
+          <li class="info-text info-text-advanced-01"><span><b>{{coinInfo ? coinInfo.name : ''}} (</b>{{coin}}<b>)</b></span></li>
+        </ul>
+      </div>
+      <a class="logo-container logo-container-advanced-01" href="https://einstein.exchange/register">
+        <img src="./assets/img/widget_circle_logo.png" alt="">
+      </a>
+    </ng-container>
+  </div>
+
+  <div class="container container-advanced-02" [ngStyle]="theme" *ngSwitchCase="'advanced02'">
+
+    <div *ngIf="loader" class="loader-container">
+      <div class="loading"></div>
+    </div>
+
+    <ng-container *ngIf="!loader">
+      <div class="img-content img-content-advanced-02">
+        <img src="{{coinInfo ? coinInfo.image.large : ''}}" alt="">
+        <img src="{{coinInfo ? coinInfo.image.large : ''}}" alt="">
+      </div>
+      <div class="info-content">
+        <ul>
+          <li class="info-text info-text-advanced-02" (animationend)="clearAnimationClass()" [ngClass]="animate"><span>{{price
+              | rounder | symbolPipe: '$': true}}</span></li>
+          <li class="info-ratio info-ratio-advanced-02"><i [ngClass]="triangleClass" (animationend)="clearAnimationClass()"
+              [ngClass]="animate" class="fa"></i> <span [ngClass]="highlightClass">{{ratio | rounder | symbolPipe: '$': true}}</span>&nbsp;/&nbsp;<span
+              [ngClass]="highlightClass">{{ percent | rounder}}%</span></li>
+          <li class="info-text info-text-advanced-02"><span><b>{{coinInfo ? coinInfo.name : ''}} (</b>{{coin}}<b>)</b></span></li>
+        </ul>
+      </div>
+      <a class="logo-container logo-container-advanced-02" href="https://einstein.exchange/register">
+        <img src="./assets/img/widget_circle_logo.png" alt="">
+      </a>
+    </ng-container>
+  </div>
+
+  <div class="container container-advanced-03" [ngStyle]="theme" *ngSwitchCase="'advanced03'">
+
+    <div *ngIf="loader" class="loader-container">
+      <div class="loading"></div>
+    </div>
+
+    <ng-container *ngIf="!loader">
+      <div class="img-content img-content-advanced-03">
+        <img src="{{coinInfo ? coinInfo.image.large : ''}}" alt="">
+        <img src="{{coinInfo ? coinInfo.image.large : ''}}" alt="">
+      </div>
+      <div class="info-content">
+        <ul>
+          <li class="info-text info-text-advanced-03" (animationend)="clearAnimationClass()" [ngClass]="animate"><span>{{price
+              | rounder | symbolPipe: '$': true}}</span></li>
+          <li class="info-ratio info-ratio-advanced-03"><i [ngClass]="triangleClass" (animationend)="clearAnimationClass()"
+              [ngClass]="animate" class="fa"></i> <span [ngClass]="highlightClass">{{ratio | rounder | symbolPipe: '$': true}}</span>&nbsp;/&nbsp;<span
+              [ngClass]="highlightClass">{{ percent | rounder}}%</span></li>
+          <li class="info-text info-text-advanced-03"><span><b>{{coinInfo ? coinInfo.name : ''}} (</b>{{coin}}<b>)</b></span></li>
+        </ul>
+      </div>
+      <a class="logo-container logo-container-advanced-03" href="https://einstein.exchange/register">
+        <img src="./assets/img/widget_circle_logo.png" alt="">
+      </a>
+    </ng-container>
+  </div>
+
+  <div class="container container-advanced-04" [ngStyle]="theme" *ngSwitchCase="'advanced04'">
+
+    <div *ngIf="loader" class="loader-container">
+      <div class="loading"></div>
+    </div>
+
+    <ng-container *ngIf="!loader">
+      <div class="img-content img-content-advanced-04">
+        <img src="{{coinInfo ? coinInfo.image.large : ''}}" alt="">
+        <img src="{{coinInfo ? coinInfo.image.large : ''}}" alt="">
+      </div>
+      <div class="info-content">
+        <ul>
+          <li class="info-text info-text-advanced-04" (animationend)="clearAnimationClass()" [ngClass]="animate"><span>{{price
+              | rounder | symbolPipe: '$': true}}</span></li>
+          <li class="info-ratio info-ratio-advanced-04"><i [ngClass]="triangleClass" (animationend)="clearAnimationClass()"
+              [ngClass]="animate" class="fa"></i> <span [ngClass]="highlightClass">{{ratio | rounder | symbolPipe: '$': true}}</span>&nbsp;/&nbsp;<span
+              [ngClass]="highlightClass">{{ percent | rounder}}%</span></li>
+          <li class="info-text info-text-advanced-04"><span><b>{{coinInfo ? coinInfo.name : ''}} (</b>{{coin}}<b>)</b></span></li>
+        </ul>
+      </div>
+      <a class="logo-container logo-container-advanced-04" href="https://einstein.exchange/register">
+        <img src="./assets/img/widget_circle_logo.png" alt="">
+      </a>
+    </ng-container>
+  </div>
+</ng-container>

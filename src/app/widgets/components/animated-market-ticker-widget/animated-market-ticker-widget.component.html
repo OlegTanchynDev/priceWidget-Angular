@@ -1,0 +1,49 @@
+<div class="wrap an" [ngStyle]="theme">
+
+  <!-- LOADER -->
+  <div class="loader-container" *ngIf="loader">
+    <div class="loading"></div>
+  </div>
+  <!-- END LOADER -->
+
+  <!-- CONTENT -->
+  <ng-container *ngIf="!loader">
+    <div class="content" *ngIf="widgetData">
+
+      <div class="running">
+        <div class="line">
+          <div *ngFor="let coin of widgetData">
+            <div class="currency_info">
+              <div class="symbol">{{coin.FROMSYMBOL}}</div>
+              <i class="fa" [ngClass]="coin.triangleClass"></i>
+              <div>{{coin.PRICE | rounder | symbolPipe: '$': true}}</div>
+              <div class="points">
+                <div class="high">{{coin.HIGHDAY | rounder | symbolPipe: '$': true}}</div>
+                <div class="low">{{coin.LOWDAY | rounder | symbolPipe: '$': true}}</div>
+              </div>
+            </div>
+          </div>
+          <a class="einstain-logo" href="https://einstein.exchange/register" target="_blank">
+            <img src="./assets/img/widget_logo.png" alt="einstain">
+          </a>
+          <div *ngFor="let coin of widgetData">
+            <div class="currency_info">
+              <div class="symbol">{{coin.FROMSYMBOL}}</div>
+              <i class="fa" [ngClass]="coin.triangleClass"></i>
+              <div>{{coin.PRICE | rounder | symbolPipe: '$': true}}</div>
+              <div class="points">
+                <div class="high">{{coin.HIGHDAY | rounder | symbolPipe: '$': true}}</div>
+                <div class="low">{{coin.LOWDAY | rounder | symbolPipe: '$': true}}</div>
+              </div>
+            </div>
+          </div>
+          <a class="einstain-logo" href="https://einstein.exchange/register" target="_blank">
+            <img src="./assets/img/widget_logo.png" alt="einstain">
+          </a>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+  <!-- END CONTENT -->
+
+</div>

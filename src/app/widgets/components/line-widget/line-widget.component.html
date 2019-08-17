@@ -1,0 +1,26 @@
+<div class="container">
+  <div *ngIf="loader" class="loader-container">
+    <div class="loading"></div>
+  </div>
+  <ng-container *ngIf="!loader">
+    <div class="img-content" *ngIf="coinInfo">
+      <img src="{{coinInfo ? coinInfo.image.small : ''}}" alt="BitCoin">
+    </div>
+    <div class="info-content" *ngIf="price && coinInfo">
+      <span class="info-text coin-info">{{coinInfo.localization.en}} ({{coin}})</span>
+      <span class="info-text coin-info">{{price | rounder | symbolPipe: '$': true}}</span>
+      <span class="info-text-price">
+        <span [ngClass]="highlightClass"><i [ngClass]="triangleClass" class="fa"> </i> {{changes | rounder |
+          symbolPipe: '$': true}}</span>
+        <span class="slash">/</span>
+        <span [ngClass]="highlightClass">{{percent | rounder | symbolPipe: '%'}}
+        </span>
+      </span>
+    </div>
+  </ng-container>
+  <div class="logo-right">
+    <a href="https://widgets.einstein.exchange/">
+      <img src="./assets/img/widget_circle_logo.png" alt="einstein">
+    </a>
+  </div>
+</div>

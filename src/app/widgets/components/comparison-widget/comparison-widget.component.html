@@ -1,0 +1,53 @@
+<ng-container *ngIf="!loader">
+  <table [ngStyle]="theme">
+    <thead>
+      <tr>
+        <th class="einsten-l">
+          <a href="https://einstein.exchange/">
+            <img class="logo" src="./assets/img/widget_circle_logo.png" alt="">
+            <img class="logo-text" src="./assets/img/widget_logo.png" alt="" srcset="">
+          </a>
+        </th>
+        <th *ngFor="let coin of widgetData; let i = index">
+          <img src="{{ coinsInfo[0] ? coinsInfo[i].image.small : ''}}" alt="">{{coin.FROMSYMBOL}}<br>
+          <p>{{coin.PRICE | rounder | symbolPipe: '$': true}}</p>
+        </th>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Name</td>
+        <td>Bitcoin</td>
+        <td>Ethereum</td>
+        <td>Ripple</td>
+      </tr>
+      <tr>
+        <td>Open 24H</td>
+        <td *ngFor="let coin of widgetData">{{coin.OPEN24HOUR | rounder | symbolPipe: '$ ': true}}</td>
+      </tr>
+      <tr>
+        <td>Low 24H</td>
+        <td *ngFor="let coin of widgetData">{{coin.LOW24HOUR | rounder | symbolPipe: '$ ': true}}</td>
+      </tr>
+      <tr>
+        <td>High 24H</td>
+        <td *ngFor="let coin of widgetData">{{coin.HIGH24HOUR | rounder | symbolPipe: '$ ': true}}</td>
+      </tr>
+      <tr>
+        <td>Change</td>
+        <td *ngFor="let coin of widgetData">{{coin.CHANGE24HOUR | rounder | symbolPipe: '$ ': true}}</td>
+      </tr>
+      <tr>
+        <td>% Change</td>
+        <td *ngFor="let coin of widgetData">{{coin.CHANGEPCT24HOUR | rounder | symbolPipe: '%'}}</td>
+      </tr>
+      <tr>
+        <td>Volume 24H</td>
+        <td *ngFor="let coin of widgetData">{{coin.VOLUME24HOUR | number | symbolPipe: '$ ': true}}</td>
+      </tr>
+      <tr>
+        <td>Last Market</td>
+        <td *ngFor="let coin of widgetData">{{coin.LASTMARKET}}</td>
+      </tr>
+    </tbody>
+  </table>
+<ng-container>

@@ -1,0 +1,69 @@
+<div #styleContainer></div>
+
+<div class="wrap" [ngStyle]="theme">
+
+  <div *ngIf="loader" class="loader-container">
+    <div class="loading"></div>
+  </div>
+
+  <ng-container *ngIf="!loader">
+
+    <div *ngIf="widgetData" class="content">
+
+      <div class="top_line">
+        <div class="price_wrap">
+          <div [ngClass]="animate" (animationend)="clearAnimationClass()">{{price | rounder | symbolPipe: '$': true}}
+          </div>
+          <div class="currency">{{coin}}/USD</div>
+        </div>
+        <div class="next_data">
+          <div class="column">
+            <header class="hd">MktCap</header>
+            <div class="num">{{widgetData.marketCap | rounder: 1 | symbolPipe: '$': true || '0.0'}}</div>
+          </div>
+          <div class="column">
+            <header class="hd">High</header>
+            <div class="num">{{widgetData.maxPrice | rounder | symbolPipe: '$': true}}</div>
+          </div>
+          <div class="column">
+            <header class="hd">Low</header>
+            <div class="num">{{widgetData.minPrice | rounder | symbolPipe: '$': true}}</div>
+          </div>
+          <div class="column">
+            <header class="hd">Supply</header>
+            <div class="num">{{widgetData.supply | rounder: 1 | symbolPipe: '$': true}}</div>
+          </div>
+          <div class="column">
+            <header class="hd">Blocks</header>
+            <div class="num">{{widgetData.blocks | rounder: 0 : true}}</div>
+          </div>
+        </div>
+      </div><!-- end .top_line -->
+
+      <div class="bot_line">
+        <div class="change" [ngClass]="animate">
+          <i class="fa" [ngClass]="triangleClass" aria-hidden="true"></i>
+          <div class="change_data">
+            <span>{{(!widgetData.percent)? '—' : widgetData?.percent | rounder | symbolPipe: '%'}}</span>
+            &nbsp;
+            <span>{{(!widgetData.change)? '—' : widgetData?.change | rounder | symbolPipe: '$': true}}</span>
+          </div>
+        </div>
+        <div class="date">{{date | date: 'MMMM dd, yyyy h:mm a'}}</div>
+      </div><!-- end .bot_line -->
+
+      <app-base-chart [data]="chartRenderData" [type]="'bitcoin-price-chart'" (mouseOver)="mouseOver($event)"
+                      (mouseOut)="mouseOut($event)"></app-base-chart>
+
+    </div><!-- end .content -->
+
+    <div class="footer">
+      <a href="https://einstein.exchange/register" target="_blank" class="link">
+        <div class="char">&lt;/&gt;</div>
+        <img src="./assets/img/widget_logo.png" alt="einstain">
+      </a>
+    </div><!-- end .footer -->
+
+  </ng-container>
+
+</div><!-- end .wrap -->

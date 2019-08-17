@@ -1,0 +1,84 @@
+/* === {FOOTER AT BOTTOM} === */
+.wrap {
+  display: flex;
+  flex-direction: column;
+  height: 80px;
+  border-radius: 10px;
+  box-shadow: 1px 1.7px 5px rgba(0,0,0,0.2);
+}
+.content {
+  flex: auto;
+}
+/* === {END FOOTER AT BOTTOM} === */
+
+.wrap {
+  width: 275px;
+  padding: 6px 14px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* === {CONTENT} === */
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.content .price {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+.content .price .num {
+  margin-right: 10px;
+  font-size: 25px;
+  font-weight: bold;
+  font-family: "Open Sans", sans-serif;
+}
+.content .price i {
+  font-size: 1.7em;
+}
+/* .content .price i.down {
+  color: #d23632;
+}
+.content .price i.up {
+  color: #0fa929;
+} */
+
+.color-down{
+  color: #da0000;
+}
+.color-up{
+  color: #10a929;
+}
+.content .price i.hide {
+  visibility: hidden;
+}
+.content .currency {
+  margin-top: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: "Open Sans", sans-serif;
+}
+/* === {END CONTENT} === */
+
+/* === {FOOTER} === */
+.footer .link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+.footer .link .char {
+  opacity: .7;
+  font-size: 14px;
+  font-family: "Open Sans", sans-serif;
+}
+.footer .link img {
+  display: block;
+  max-width: 64px;
+  border: none;
+}
+/* === {END FOOTER} === */

@@ -1,0 +1,31 @@
+<div class="wrap" [ngStyle]="theme">
+
+  <!-- LOADER -->
+  <div class="loader-container" *ngIf="loader">
+    <div class="loading"></div>
+  </div>
+  <!-- END LOADER -->
+
+  <!-- CONTENT -->
+  <ng-container *ngIf="!loader">
+    <div class="content row no-gutters" *ngIf="widgetData">
+      <ng-container *ngFor="let coin of widgetData">
+        <div class="currency_info col-12 col-sm-12 col-md-4">
+          <div class="top">
+          <div class="symbol"><b>{{coin.FROMSYMBOL}}/{{coin.TOSYMBOL}}</b></div>
+          <div>{{coin.PRICE | rounder }}</div>
+          </div>
+          <div class="bottom">
+            <div class="percent" [ngClass]="coin.toClass" (animationend)="clearAnimationClass(coin.FROMSYMBOL)">
+              <i class="fa" [ngClass]="coin.triangleClass"></i>
+              <span  *ngIf="coin.percent" [ngClass]="coin.highlightClass" >{{coin.percent | rounder | symbolPipe: '%'}}</span>
+            </div>
+            <span>{{coin.priceDiff | rounder }}</span>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </ng-container>
+  <!-- END CONTENT -->
+
+</div>

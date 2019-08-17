@@ -1,0 +1,150 @@
+/* === {SCROLLBAR} === */
+tbody::-webkit-scrollbar {
+  width: 4px;
+}
+tbody::-webkit-scrollbar-thumb {
+  background-color: #a0a0a0;
+  border-radius: 10px;
+}
+/* === {END SCROLLBAR} === */
+
+.wrap {
+  width: 956px;
+  /* height: 370px; */
+  max-width: 100%;
+  height: 370px;
+  min-height: 370px;
+  max-height: 100%;
+  border-radius: 10px;
+  box-shadow: 1px 1.7px 5px rgba(0,0,0,0.2);
+  overflow: hidden;
+}
+table {
+  display: block;
+  width: 100%;
+  height: 100%;
+  table-layout: auto;
+  border-collapse: collapse;
+  margin: 0;
+  font-size: 12px;
+  line-height: 16px;
+  color: rgb(40,40,41);
+  font-family: "Open Sans", sans-serif;
+}
+table th button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+table th {
+  border-right: #dfdfdf 1px solid;
+  background-color: rgba(203,203,203,.7);
+  border-bottom: #dfdfdf 1px solid;
+  padding: 0;
+  text-align: center;
+  height: 50px;
+  width: 105px;
+}
+table tr:first-of-type th:first-of-type {
+  width: 238px;
+  text-align: left;
+  padding-left: 15px;
+  box-sizing: border-box;
+}
+table th .title {
+  font-weight: bold;
+}
+table th .desc {
+  font-weight: normal;
+}
+table tr:nth-child(even) {
+  background-color: rgba(205,205,205,.3);
+}
+table td {
+  text-align: right;
+  height: 40px;
+  width: 105px;
+  border-right: 1px solid #dfdfdf;
+  border-collapse: separate;
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding-right: 14px;
+}
+
+tbody {
+  display: block;
+  height: 320px;
+  width: 100%;
+  overflow-y: auto;
+}
+
+tbody tr td:first-child{
+  display: flex;
+  width: 232px;
+  padding-right: 0;
+}
+
+tbody tr td:first-child div {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  margin-left: 10px;
+  font-weight: 700;
+}
+tbody tr td:last-child {
+  max-width: 105px;
+  width: 102px;
+  text-align: center;
+  border-right: none;
+  padding-right: 0;
+}
+.minus {
+  color: #d23732;
+}
+.plus {
+  color: #10a929;
+}
+
+.media-thead {
+  display: none;
+}
+
+@media (max-width: 575px) {
+  .media-thead {
+    display: table-caption;
+  }
+  table tr:first-of-type th:first-of-type {
+    width: 174px;
+  }
+
+  tbody tr td:first-child {
+    max-width: 174px;
+  }
+
+  tbody .media-thead th:first-child {
+    max-width: 174px;
+    min-width: 174px;
+  }
+
+  thead {
+    display: none;
+  }
+
+  table th {
+    width: 84px;
+  }
+
+  table .media-thead th {
+    min-width: 84px;
+  }
+
+  table td {
+    width: 84px;
+  }
+
+  tbody tr td:last-child {
+    min-width: 84px;
+    max-width: 84px;
+  }
+}

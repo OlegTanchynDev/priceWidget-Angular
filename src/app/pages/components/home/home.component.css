@@ -1,0 +1,875 @@
+/* === {MEDIA QUERIES} === */
+/**{
+  BACKGROUND: BLACK;
+  !*wandering-riddle*!
+}*/
+.three-widgets .center-btn {
+  padding-bottom: 19px;
+}
+
+@media (max-width: 575px) {
+  .container {
+    max-width: 320px;
+  }
+
+  /*wandering-riddle*/
+  .animated-market p {
+    width: 50%;
+    margin: 0 auto;
+  }
+}
+
+button {
+  margin-bottom: 10px;
+}
+
+p, h2 {
+  font-family: "Open Sans" sans-serif;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* === {END MEDIA QUERIES} === */
+/* === {BANNER} === */
+.banner {
+  position: relative;
+  background: url('/assets/img/top-image.png') center center / cover no-repeat;
+}
+
+.banner .width-full {
+  min-height: calc(100vh - 80px);
+}
+
+.banner .title {
+  color: #fff;
+  font-size: 48px;
+  font-weight: 300;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+}
+
+.banner button {
+  position: absolute;
+  left: 50%;
+  bottom: 40px;
+  margin-left: -25px;
+  background-color: transparent;
+  border: none;
+  color: white;
+  width: 50px;
+  outline: none;
+  cursor: pointer;
+}
+
+.banner button:hover,
+.banner button:focus {
+  color: #acacac;
+  animation: bounce ease 1s;
+  transform-origin: center bottom;
+}
+
+@keyframes bounce {
+  0%, 20%, 53%, 80%, to {
+    animation-timing-function: cubic-bezier(.215, .61, .355, 1);
+    transform: translateZ(0);
+  }
+  40%, 43% {
+    animation-timing-function: cubic-bezier(.755, .05, .855, .06);
+    transform: translate3d(0, -10px, 0);
+  }
+  70% {
+    animation-timing-function: cubic-bezier(.755, .05, .855, .06);
+    transform: translate3d(0, -5px, 0);
+  }
+  90% {
+    transform: translate3d(0, -2px, 0);
+  }
+}
+
+/* === {END BANNER} === */
+
+/* === {BITCOIN PRICE CHART} === */
+.bitcoin-price-chart {
+  position: relative;
+  padding-top: 130px;
+  padding-bottom: 50px;
+  box-sizing: border-box;
+}
+
+.bitcoin-price-chart .title {
+  font-size: 32px;
+  color: rgb(58, 56, 56);
+  font-family: "Roboto", sans-serif;
+}
+
+.bitcoin-price-chart .text {
+  font-size: 17px;
+  line-height: 24px;
+  color: rgb(42, 41, 41);
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+}
+
+.bitcoin-price-chart .btn {
+  margin-top: 15px;
+}
+
+/* === {END BITCOIN PRICE CHART} === */
+
+/* === {SIMPLE BITCOIN PRICE} === */
+.simple-bitcoin-price {
+  position: relative;
+  padding-top: 180px;
+  padding-bottom: 130px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.simple-bitcoin-price::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -25px; /*wandering-riddle*/
+  width: 200%;
+  height: 100%;
+  background-color: #f2f4f8;
+  transform: rotate(-2deg) translateY(5px);
+}
+
+.simple-bitcoin-price .widgets {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+.simple-bitcoin-price .top {
+
+}
+
+.simple-bitcoin-price .bot {
+  align-self: center;
+  margin-top: 40px;
+}
+
+.simple-bitcoin-price .content {
+  font-size: 17px;
+  line-height: 24px;
+  color: rgb(42, 41, 41);
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+}
+
+.simple-bitcoin-price .title {
+  font-size: 32px;
+  color: rgb(58, 56, 56);
+  font-family: "Roboto", sans-serif;
+}
+
+.simple-bitcoin-price .btn {
+  margin-top: 15px;
+}
+
+/* === {END SIMPLE BITCOIN PRICE} === */
+
+/* === {PERIODIC PRICE CHART} === */
+.periodic-price-chart {
+  position: relative;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  box-sizing: border-box;
+}
+
+.periodic-price-chart .title {
+  text-align: center;
+  font-size: 32px;
+  color: rgb(58, 56, 56);
+  font-family: "Roboto", sans-serif;
+}
+
+.periodic-price-chart .widget {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  height: auto;
+}
+
+.periodic-price-chart .content {
+  max-width: 100%;
+  margin: 40px auto 0;
+  font-size: 17px;
+  color: rgb(42, 41, 41);
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  text-align: center;
+}
+
+.periodic-price-chart .btn {
+  margin-top: 15px;
+}
+
+/* === {PERIODIC PRICE CHART} === */
+
+/* === {PRICE TICKER} === */
+.price-ticker {
+  position: relative;
+  padding-top: 130px;
+  padding-bottom: 130px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.price-ticker::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -25px; /*wandering-riddle*/
+  width: 200%;
+  height: 100%;
+  background-color: #f2f4f8;
+  transform: rotate(2deg) translateY(70px);
+}
+
+.price-ticker .widget {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+}
+
+.price-ticker .content {
+  max-width: 480px;
+  font-size: 17px;
+  line-height: 24px;
+  color: rgb(42, 41, 41);
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+}
+
+.price-ticker .title {
+  font-size: 32px;
+  color: rgb(58, 56, 56);
+  font-family: "Roboto", sans-serif;
+}
+
+.price-ticker .btn {
+  margin-top: 7px;
+}
+
+/* === {END PRICE TICKER} === */
+
+/* === {ANIMATED MARKET TICKER WIDGET} === */
+.animated-market {
+  position: relative;
+  padding-top: 130px;
+  padding-bottom: 130px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.animated-market::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -25px; /*wandering-riddle*/
+  width: 200%;
+  height: 100%;
+  background-color: #f2f4f8;
+  transform: rotate(2deg) translateY(70px);
+}
+
+.animated-market .wrapper {
+  max-width: 100%;
+}
+
+.animated-market .widget {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 25px;
+  margin-bottom: 35px;
+}
+
+.animated-market .content {
+  max-width: 608px;
+  font-size: 17px;
+  line-height: 24px;
+  color: rgb(42, 41, 41);
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  text-align: center;
+  width: 100%;
+}
+
+.animated-market .title {
+  font-size: 32px;
+  color: rgb(58, 56, 56);
+  font-family: "Roboto", sans-serif;
+}
+
+.animated-market .btn {
+  margin-top: 7px;
+  margin-left: auto;
+}
+
+/* === {END ANIMATED MARKET TICKER WIDGET} === */
+
+/* === {PRICING INDEX} === */
+.pricing-index {
+  position: relative;
+  padding-top: 80px;
+  padding-bottom: 130px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.pricing-index .widget {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pricing-index .content {
+  max-width: 480px;
+  font-size: 17px;
+  line-height: 24px;
+  color: rgb(42, 41, 41);
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+}
+
+.pricing-index .title {
+  font-size: 32px;
+  color: rgb(58, 56, 56);
+  font-family: "Roboto", sans-serif;
+}
+
+.pricing-index .btn {
+  margin-top: 7px;
+}
+
+/* === {END PRICING INDEX} === */
+
+/* === {TICKER WIDGET} === */
+.ticker-widget {
+  position: relative;
+  padding-top: 130px;
+  padding-bottom: 130px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.ticker-widget::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -25px; /*wandering-riddle*/
+  width: 200%;
+  height: 100%;
+  background-color: #f2f4f8;
+  transform: rotate(2deg) translateY(70px);
+}
+
+.ticker-widget .widget {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 15px 0;
+  max-width: 100%;
+}
+
+.ticker-widget .content {
+  max-width: 608px;
+  font-size: 17px;
+  line-height: 24px;
+  color: rgb(42, 41, 41);
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  text-align: center;
+  width: 100%;
+}
+
+.ticker-widget .title {
+  font-size: 32px;
+  color: rgb(58, 56, 56);
+  font-family: "Roboto", sans-serif;
+}
+
+.ticker-widget .btn {
+  margin-top: 7px;
+  margin-left: auto;
+}
+
+/* === {END TICKER WIDGET} === */
+
+/* === {PRICING INDEX} === */
+.single-ticker {
+  position: relative;
+  padding-top: 80px;
+  padding-bottom: 130px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.single-ticker .widget {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.single-ticker .widget *:first-child {
+  align-self: center;
+  margin-right: 75px;
+}
+
+.single-ticker .widget *:nth-child(2) {
+  align-self: center;
+  margin-left: 200px;
+  margin-top: 20px;
+}
+
+.single-ticker .widget *:last-child {
+  align-self: center;
+  margin-left: 40px;
+  margin-top: 20px;
+}
+
+.single-ticker .content {
+  max-width: 480px;
+  font-size: 17px;
+  line-height: 24px;
+  color: rgb(42, 41, 41);
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+}
+
+.single-ticker .title {
+  font-size: 32px;
+  color: rgb(58, 56, 56);
+  font-family: "Roboto", sans-serif;
+}
+
+.single-ticker .btn {
+  margin-top: 7px;
+}
+
+/* === {END PRICING INDEX} === */
+
+/* === {CRYPTOCURRENCY MARKET} === */
+.cryptocurrency-market {
+  position: relative;
+  padding-top: 70px;
+  padding-bottom: 70px;
+  box-sizing: border-box;
+  background-color: #f2f4f8;
+  overflow: hidden;
+}
+
+.cryptocurrency-market .widget {
+  display: flex;
+  justify-content: center;
+}
+
+.cryptocurrency-market .content {
+  max-width: 940px;
+  margin: 40px auto 0;
+  font-size: 17px;
+  color: rgb(42, 41, 41);
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  text-align: center;
+}
+
+.cryptocurrency-market .title {
+  font-size: 32px;
+  color: rgb(58, 56, 56);
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+}
+
+.cryptocurrency-market .btn {
+  margin-top: 30px;
+}
+
+/* === {END CRYPTOCURRENCY MARKET} === */
+
+/* === {SQUARE WIDGET} === */
+.square-widget {
+  position: relative;
+  padding-top: 80px;
+  padding-bottom: 130px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.square-widget .title {
+  font-size: 32px;
+  color: rgb(58, 56, 56);
+  font-family: "Roboto", sans-serif;
+}
+
+.square-widget .content {
+  max-width: 480px;
+  font-size: 17px;
+  line-height: 24px;
+  color: rgb(42, 41, 41);
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+}
+
+.square-widget .widget {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* === {END SQUARE WIDGET} === */
+
+/* === {SMALL CHART} === */
+.small-chart {
+  position: relative;
+  padding-top: 180px;
+  padding-bottom: 130px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.small-chart::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -25px; /*wandering-riddle*/
+  width: 200%;
+  height: 100%;
+  background-color: #f2f4f8;
+  transform: rotate(-2deg) translateY(5px);
+}
+
+.small-chart .title {
+  font-size: 32px;
+  color: rgb(58, 56, 56);
+  font-family: "Roboto", sans-serif;
+}
+
+.small-chart .content {
+  max-width: 480px;
+  font-size: 17px;
+  line-height: 24px;
+  color: rgb(42, 41, 41);
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+}
+
+.small-chart .widget {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* === {END SMALL CHART} === */
+
+/* === {COMPARISON WIDGET} === */
+.comparison-widget {
+  position: relative;
+  padding-top: 80px;
+  padding-bottom: 130px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.comparison-widget .title {
+  font-size: 32px;
+  color: rgb(58, 56, 56);
+  font-family: "Roboto", sans-serif;
+}
+
+.comparison-widget .content {
+  max-width: 940px;
+  font-size: 17px;
+  line-height: 24px;
+  color: rgb(42, 41, 41);
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  text-align: center;
+  width: 100%;
+}
+
+.comparison-widget .widget-content {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.comparison-widget .widget {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* === {END COMPARISON WIDGET} === */
+
+/* === {LEADERBOARDS} === */
+.leaderboards {
+  position: relative;
+  padding-top: 80px;
+  padding-bottom: 130px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.leaderboards::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -25px; /*wandering-riddle*/
+  width: 200%;
+  height: 100%;
+  background-color: #f2f4f8;
+  transform: rotate(2deg) translateY(70px);
+}
+
+.leaderboards .title {
+  font-size: 32px;
+  color: rgb(58, 56, 56);
+  font-family: "Roboto", sans-serif;
+}
+
+.leaderboards .content {
+  max-width: 940px;
+  font-size: 17px;
+  line-height: 24px;
+  color: rgb(42, 41, 41);
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  text-align: center;
+  width: 100%;
+}
+
+.leaderboards .widget-content {
+  text-align: center;
+}
+
+.leaderboards .widget {
+  justify-content: center;
+  align-items: center;
+}
+
+.leaderboards .widget .div {
+  width: 1000px;
+  max-width: 100%;
+}
+
+/* === {END LEADERBOARDS} === */
+
+/* === {LINE-WIDGETS} === */
+.line-widgets {
+  position: relative;
+  padding-top: 80px;
+  padding-bottom: 130px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.line-widgets .title {
+  font-size: 32px;
+  color: rgb(58, 56, 56);
+  font-family: "Roboto", sans-serif;
+}
+
+.line-widgets .content {
+  max-width: 480px;
+  font-size: 17px;
+  line-height: 24px;
+  color: rgb(42, 41, 41);
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+}
+
+.line-widgets .widget {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* === {END LINE-WIDGETS} === */
+
+/* === {CRYPTO CALCULATION} === */
+.crypto-calculation {
+  position: relative;
+  padding-top: 80px;
+  padding-bottom: 130px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.crypto-calculation::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -25px; /*wandering-riddle*/
+  width: 200%;
+  height: 100%;
+  background-color: #f2f4f8;
+  transform: rotate(-2deg) translateY(5px);
+}
+
+.crypto-calculation .title {
+  font-size: 32px;
+  color: rgb(58, 56, 56);
+  font-family: "Roboto", sans-serif;
+}
+
+.crypto-calculation .content {
+  max-width: 940px;
+  font-size: 17px;
+  line-height: 24px;
+  color: rgb(42, 41, 41);
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  text-align: center;
+  width: 100%;
+}
+
+.crypto-calculation .widget {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.crypto-calculation .btn-widget {
+  margin-top: 30px;
+  text-align: center;
+}
+
+/* === {END CRYPTO CALCULATION} === */
+
+/* === {THREE WIDGETS} === */
+.three-widgets {
+  position: relative;
+  padding-top: 120px;
+  padding-bottom: 80px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.three-widgets .col-12 {
+  padding-top: 10px;
+}
+
+.three-widgets .widgets {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+.three-widgets .content {
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 17px;
+  line-height: 24px;
+  color: rgb(42, 41, 41);
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  text-align: center;
+}
+
+.three-widgets .title {
+  font-size: 28px;
+  color: rgb(58, 56, 56);
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+}
+
+.three-widgets .btn {
+  margin-top: 15px;
+}
+
+/* === {END THREE WIDGETS} === */
+
+.btn {
+  font-size: 16px;
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  min-width: 180px;
+  padding: 9px 20px;
+  border-radius: 19px;
+  background-color: #4d4bed;
+  border: none;
+  outline: none;
+  transition: background-color .3s;
+}
+
+.btn:hover {
+  background-color: rgba(77, 75, 237, .7);
+  cursor: pointer;
+}
+
+.widget {
+  height: 100%;
+}
+
+@media screen and (max-width: 575px) {
+  .banner .scroll-btn {
+    bottom: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  /* === {LINE-WIDGETS} === */
+  .title {
+    text-align: center;
+  }
+
+  .content {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .bitcoin-price-chart .widget {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  /* === {END LINE-WIDGETS} === */
+  .content {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  /* === {LINE-WIDGETS} === */
+  .line-widgets .widget {
+    margin-top: 20px;
+  }
+
+}
+
+@media (max-width: 991px) {
+
+  /* === {LINE-WIDGETS} === */
+  .line-widgets .title {
+    text-align: center;
+  }
+
+  .line-widgets .content {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .simple-bitcoin-price .widget {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .single-ticker .widget *:nth-child(2) {
+    margin-left: 120px;
+  }
+
+  .single-ticker .widget *:last-child {
+    margin-left: 1px;
+  }
+
+  /* === {END LINE-WIDGETS} === */
+  /* === {BITCOIN PRICE CHART} === */
+}

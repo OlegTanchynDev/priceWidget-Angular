@@ -1,0 +1,46 @@
+<div #styleContainer></div>
+
+<div class="wrap" [ngStyle]="theme">
+
+  <div *ngIf="loader" class="loader-container">
+    <div class="loading"></div>
+  </div>
+
+  <ng-container *ngIf="!loader">
+
+    <div *ngIf="widgetData" class="content">
+
+      <div class="top_line">
+        <div class="price_wrap">
+          <div class="currency">Bitcoin ({{activePeriod.name}})</div>
+          <div class="price" [ngClass]="animate" (animationend)="clearAnimationClass()">
+            {{price | rounder | symbolPipe: '$': true}}
+          </div>
+        </div>
+        <div class="change {{animate}} {{highlightClass}}" [ngClass]="">
+          <i class="fa" [ngClass]="triangleClass" aria-hidden="true"></i>
+          <span>{{(!widgetData.percent)? '—' : widgetData?.percent | rounder | symbolPipe: '%'}}</span>
+        </div>
+      </div><!-- end .top_line -->
+
+      <app-base-chart [data]="chartRenderData" [type]="'bitcoin-price-widget'"></app-base-chart>
+
+    </div><!-- end .content -->
+
+    <div class="footer">
+      <div class="btn_group">
+        <button
+          *ngFor="let param of history"
+          (click)="loadingHistory(param)"
+          [ngClass]="{'clicked': activePeriod === param}">
+          {{param.name}}
+        </button>
+      </div>
+      <a href="https://einstein.exchange/register" target="_blank" class="link">
+        <img src="./assets/img/widget_logo.png" alt="einstain">
+      </a>
+    </div><!-- end .footer -->
+
+  </ng-container>
+
+</div><!-- end .wrap -->
